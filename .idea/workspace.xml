@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ed7ac0a-78ed-48ac-a47f-51458f86ce55" name="Default" comment="" />
+    <list default="true" id="8ed7ac0a-78ed-48ac-a47f-51458f86ce55" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pva/IoNio/IoNio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pva/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pva/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pva/lessons/Lessons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pva/lessons/Lessons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pva/lessons/LessonsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pva/lessons/LessonsTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Lessons.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Lessons.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Lessons.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state relative-caret-position="307">
+              <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="127" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#stringy#0;class#Lessons#0" />
@@ -25,20 +32,21 @@
                 <element signature="method#twiceAsOld#0;class#Lessons#0" />
                 <element signature="method#invert#0;class#Lessons#0" />
                 <element signature="method#fakeString#0;class#Lessons#0" />
-                <element signature="e#1648#1649#0" expanded="true" />
-                <element signature="e#1725#1726#0" expanded="true" />
-                <element signature="e#1792#1793#0" expanded="true" />
-                <element signature="e#1862#1863#0" expanded="true" />
+                <element signature="method#seriesSum#0;class#Lessons#0" />
+                <element signature="method#nbDig#0;class#Lessons#0" />
+                <element signature="method#findShort#0;class#Lessons#0" />
+                <element signature="method#unluckyDays#0;class#Lessons#0" />
+                <element signature="method#sumTriangularNumbers#0;class#Lessons#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LessonsTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LessonsTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/LessonsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="210">
+              <caret line="135" column="40" lean-forward="true" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
               <folding>
                 <element signature="method#toBinary#0;class#LessonsTest#0" />
                 <element signature="method#stringy#0;class#LessonsTest#0" />
@@ -60,8 +68,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,13 +85,15 @@
       <replace>Lessons</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/pva/lessons/SeriesSum.java" />
         <option value="$PROJECT_DIR$/src/com/pva/Main.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pva/Main.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/pva/lessons/FakeBinTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pva/lessons/FakeBin.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pva/lessons/Grow.java" />
@@ -93,9 +103,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pva/lessons/Positive.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/pva/lessons/PositiveTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pva/lessons/SeriesSum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pva/lessons/Lessons.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/pva/lessons/SeriesSumTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pva/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pva/IoNio/IoNio.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/pva/lessons/LessonsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pva/lessons/Lessons.java" />
       </list>
     </option>
   </component>
@@ -121,6 +133,7 @@
     <option name="width" value="1024" />
     <option name="height" value="917" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -171,27 +184,6 @@
               <item name="pva" type="462c0819:PsiDirectoryNode" />
               <item name="lessons" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="codewars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codewars" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codewars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codewars" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codewars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codewars" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lessons" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -229,31 +221,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LessonsTest">
-    <configuration name="LessonsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LessonsTest.makeComplement">
+    <configuration name="CodeWars" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.pva.Main" />
       <module name="codewars" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.pva.lessons.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.pva.lessons" />
-      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.LessonsTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
-    <configuration name="LessonsTest.century" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LessonsTest.findShort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -265,7 +238,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
       <option name="MAIN_CLASS_NAME" value="com.pva.lessons.LessonsTest" />
-      <option name="METHOD_NAME" value="century" />
+      <option name="METHOD_NAME" value="findShort" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -276,7 +249,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="LessonsTest.fakeString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LessonsTest.makeComplement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -288,7 +261,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
       <option name="MAIN_CLASS_NAME" value="com.pva.lessons.LessonsTest" />
-      <option name="METHOD_NAME" value="fakeString" />
+      <option name="METHOD_NAME" value="makeComplement" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -299,7 +272,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="LessonsTest.invert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LessonsTest.nbDig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -311,7 +284,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
       <option name="MAIN_CLASS_NAME" value="com.pva.lessons.LessonsTest" />
-      <option name="METHOD_NAME" value="invert" />
+      <option name="METHOD_NAME" value="nbDig" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -322,7 +295,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="LessonsTest.twiceAsOld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LessonsTest.sumTriangularNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -334,7 +307,30 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
       <option name="MAIN_CLASS_NAME" value="com.pva.lessons.LessonsTest" />
-      <option name="METHOD_NAME" value="twiceAsOld" />
+      <option name="METHOD_NAME" value="sumTriangularNumbers" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="LessonsTest.unluckyDays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="codewars" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pva.lessons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.pva.lessons" />
+      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.LessonsTest" />
+      <option name="METHOD_NAME" value="unluckyDays" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -361,19 +357,20 @@
       <method />
     </configuration>
     <list>
-      <item itemvalue="JUnit.LessonsTest.century" />
-      <item itemvalue="JUnit.LessonsTest.twiceAsOld" />
-      <item itemvalue="JUnit.LessonsTest.invert" />
-      <item itemvalue="JUnit.LessonsTest.fakeString" />
-      <item itemvalue="JUnit.LessonsTest" />
+      <item itemvalue="Application.CodeWars" />
+      <item itemvalue="JUnit.LessonsTest.nbDig" />
+      <item itemvalue="JUnit.LessonsTest.findShort" />
+      <item itemvalue="JUnit.LessonsTest.unluckyDays" />
+      <item itemvalue="JUnit.LessonsTest.sumTriangularNumbers" />
+      <item itemvalue="JUnit.LessonsTest.makeComplement" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LessonsTest" />
-        <item itemvalue="JUnit.LessonsTest.fakeString" />
-        <item itemvalue="JUnit.LessonsTest.invert" />
-        <item itemvalue="JUnit.LessonsTest.twiceAsOld" />
-        <item itemvalue="JUnit.LessonsTest.century" />
+        <item itemvalue="JUnit.LessonsTest.makeComplement" />
+        <item itemvalue="JUnit.LessonsTest.sumTriangularNumbers" />
+        <item itemvalue="JUnit.LessonsTest.unluckyDays" />
+        <item itemvalue="JUnit.LessonsTest.findShort" />
+        <item itemvalue="JUnit.LessonsTest.nbDig" />
       </list>
     </recent_temporary>
   </component>
@@ -388,44 +385,44 @@
       <option name="presentableId" value="Default" />
       <updated>1537864508409</updated>
       <workItem from="1537864509877" duration="13017000" />
-      <workItem from="1537964030978" duration="2662000" />
+      <workItem from="1537964030978" duration="13946000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LessonsTest_slope - 2018.09.25 at 16h 05m 10s.xml">
-      <configuration name="LessonsTest.slope" configurationId="JUnit" />
+    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 14m 31s.xml">
+      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_slope - 2018.09.25 at 16h 07m 54s.xml">
-      <configuration name="LessonsTest.slope" configurationId="JUnit" />
+    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 14m 41s.xml">
+      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_slope - 2018.09.25 at 16h 08m 29s.xml">
-      <configuration name="LessonsTest.slope" configurationId="JUnit" />
+    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 15m 15s.xml">
+      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_century - 2018.09.25 at 16h 14m 05s.xml">
-      <configuration name="LessonsTest.century" configurationId="JUnit" />
+    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 15m 26s.xml">
+      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_century - 2018.09.25 at 16h 15m 21s.xml">
-      <configuration name="LessonsTest.century" configurationId="JUnit" />
+    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 15m 42s.xml">
+      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_twiceAsOld - 2018.09.25 at 18h 32m 02s.xml">
-      <configuration name="LessonsTest.twiceAsOld" configurationId="JUnit" />
+    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 22m 12s.xml">
+      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_twiceAsOld - 2018.09.25 at 18h 32m 55s.xml">
-      <configuration name="LessonsTest.twiceAsOld" configurationId="JUnit" />
+    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 22m 47s.xml">
+      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_invert - 2018.09.26 at 15h 31m 52s.xml">
-      <configuration name="LessonsTest.invert" configurationId="JUnit" />
+    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 25m 20s.xml">
+      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_fakeString - 2018.09.26 at 15h 33m 04s.xml">
-      <configuration name="LessonsTest.fakeString" configurationId="JUnit" />
+    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 25m 31s.xml">
+      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest - 2018.09.26 at 15h 51m 33s.xml">
-      <configuration name="LessonsTest" configurationId="JUnit" />
+    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 26m 47s.xml">
+      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15679000" />
+    <option name="totallyTimeSpent" value="26963000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -440,7 +437,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5374868" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -452,7 +449,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5406547" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.44244984" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -469,11 +466,56 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="35" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="cal.getTime()" language="JAVA" />
+        <watch expression="cal.get(Calendar.DAY_OF_WEEK)" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>i==5000</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="watch">
+      <expression>
+        <expression-string>cal.get(Calendar.DAY_OF_WEEK)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>cal.getTime()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>dna.replaceAll(&quot;T&quot;, &quot;n&quot;).replaceAll(&quot;A&quot;, &quot;T&quot;).replaceAll(&quot;n&quot;, &quot;A&quot;).replaceAll(&quot;G&quot;, &quot;n&quot;).replaceAll(&quot;C&quot;, &quot;G&quot;).replaceAll(&quot;n&quot;, &quot;G&quot;);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dna.replaceAll(&quot;T&quot;, &quot;n&quot;).replaceAll(&quot;A&quot;, &quot;T&quot;).replaceAll(&quot;n&quot;, &quot;A&quot;)                 .replaceAll(&quot;G&quot;, &quot;n&quot;).replaceAll(&quot;C&quot;, &quot;G&quot;).replaceAll(&quot;n&quot;, &quot;G&quot;</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dna.replaceAll(&quot;T&quot;, &quot;n&quot;).replaceAll(&quot;A&quot;, &quot;T&quot;).replaceAll(&quot;n&quot;, &quot;A&quot;).replaceAll(&quot;G&quot;, &quot;n&quot;).replaceAll(&quot;C&quot;, &quot;G&quot;).replaceAll(&quot;n&quot;, &quot;G&quot;</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>cal</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>Math.atan(0.2)</expression-string>
         <language-id>JAVA</language-id>
@@ -499,21 +541,6 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>Integer.valueOf(c)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Arrays.stream(arr).map(num -&gt; num * num).toArray()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>1/m</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
@@ -528,10 +555,11 @@
             <element signature="method#twiceAsOld#0;class#Lessons#0" />
             <element signature="method#invert#0;class#Lessons#0" />
             <element signature="method#fakeString#0;class#Lessons#0" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1725#1726#0" expanded="true" />
-            <element signature="e#1792#1793#0" expanded="true" />
-            <element signature="e#1862#1863#0" expanded="true" />
+            <element signature="method#seriesSum#0;class#Lessons#0" />
+            <element signature="method#nbDig#0;class#Lessons#0" />
+            <element signature="method#findShort#0;class#Lessons#0" />
+            <element signature="method#unluckyDays#0;class#Lessons#0" />
+            <element signature="method#sumTriangularNumbers#0;class#Lessons#0" />
           </folding>
         </state>
       </provider>
@@ -566,20 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -656,29 +670,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Lessons.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#stringy#0;class#Lessons#0" />
-            <element signature="method#slope#0;class#Lessons#0" />
-            <element signature="method#twiceAsOld#0;class#Lessons#0" />
-            <element signature="method#invert#0;class#Lessons#0" />
-            <element signature="method#fakeString#0;class#Lessons#0" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1725#1726#0" expanded="true" />
-            <element signature="e#1792#1793#0" expanded="true" />
-            <element signature="e#1862#1863#0" expanded="true" />
+            <element signature="e#111#112#0" expanded="true" />
+            <element signature="e#128#129#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/IoNio/IoNio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="327" selection-start-line="327" selection-end-line="327" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/LessonsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="210">
+          <caret line="135" column="40" lean-forward="true" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
           <folding>
             <element signature="method#toBinary#0;class#LessonsTest#0" />
             <element signature="method#stringy#0;class#LessonsTest#0" />
@@ -690,6 +717,26 @@
             <element signature="method#map#0;class#LessonsTest#0" />
             <element signature="method#sum#0;class#LessonsTest#0" />
             <element signature="method#seriesSumTest#0;class#LessonsTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Lessons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="127" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#stringy#0;class#Lessons#0" />
+            <element signature="method#slope#0;class#Lessons#0" />
+            <element signature="method#twiceAsOld#0;class#Lessons#0" />
+            <element signature="method#invert#0;class#Lessons#0" />
+            <element signature="method#fakeString#0;class#Lessons#0" />
+            <element signature="method#seriesSum#0;class#Lessons#0" />
+            <element signature="method#nbDig#0;class#Lessons#0" />
+            <element signature="method#findShort#0;class#Lessons#0" />
+            <element signature="method#unluckyDays#0;class#Lessons#0" />
+            <element signature="method#sumTriangularNumbers#0;class#Lessons#0" />
           </folding>
         </state>
       </provider>

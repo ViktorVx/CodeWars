@@ -1,7 +1,7 @@
 package com.pva.lessons;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class Lessons {
@@ -81,5 +81,50 @@ public class Lessons {
             m+=3.0;
         }
         return new BigDecimal(res).setScale(2, BigDecimal.ROUND_HALF_UP).toString();
+    }
+
+    public static int nbDig(int n, int d) {
+        long nn;
+        int res = 0;
+        String dd = String.valueOf(d);
+        for (int i = 0; i <= n; i++) {
+            nn = i*i;
+            res+=String.valueOf(nn).replaceAll("[^" + dd + "]", "").length();
+        }
+        return res;
+    }
+
+    public static int findShort(String s) {
+        return Arrays.stream(s.split(" ")).map(st -> st.length()).min(Integer::compare).get();
+    }
+
+    public static int unluckyDays(int year) {
+        GregorianCalendar cal;
+        cal = new GregorianCalendar();
+        cal.setGregorianChange(new Date(Long.MIN_VALUE));
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.DATE, 13);
+        int res = 0;
+        for (int i = 0; i < 12; i++) {
+            cal.set(Calendar.MONTH, i);
+            if (cal.get(Calendar.DAY_OF_WEEK)==Calendar.FRIDAY) {
+                res++;
+            }
+        }
+
+        return res;
+    }
+
+    public static int sumTriangularNumbers(int n) {
+        int res = 0;
+        for (int i = 0; i < n + 1; i++) {
+            res += i * (i + 1) / 2;
+        }
+        return res;
+    }
+
+    public static String makeComplement(String dna) {
+        return dna.replaceAll("T", "n").replaceAll("A", "T").replaceAll("n", "A")
+                .replaceAll("G", "n").replaceAll("C", "G").replaceAll("n", "C");
     }
 }

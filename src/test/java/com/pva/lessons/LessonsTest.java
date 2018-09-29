@@ -107,4 +107,44 @@ public class LessonsTest {
         assertEquals("1.49", Lessons.seriesSum(4));
         assertEquals("1.57", Lessons.seriesSum(5));
     }
+
+
+    @Test
+    public void nbDig() {
+        assertEquals(Lessons.nbDig(10, 1), 4);
+        assertEquals(Lessons.nbDig(5750, 0), 4700);
+        assertEquals(Lessons.nbDig(11011, 2), 9481);
+        assertEquals(Lessons.nbDig(12224, 8), 7733);
+        assertEquals(Lessons.nbDig(11549, 1), 11905);
+    }
+
+    @Test
+    public void findShort() {
+        assertEquals(3, Lessons.findShort("bitcoin take over the world maybe who knows perhaps"));
+        assertEquals(3, Lessons.findShort("turns out random test cases are easier than writing out basic ones"));
+    }
+
+    @Test
+    public void unluckyDays() {
+        assertEquals(3, Lessons.unluckyDays(2015));
+        assertEquals(1, Lessons.unluckyDays(1986));
+        assertEquals(1, Lessons.unluckyDays(842));
+        assertEquals(3, Lessons.unluckyDays(1001));
+    }
+
+    @Test
+    public void sumTriangularNumbers() {
+        assertEquals(56, Lessons.sumTriangularNumbers(6));
+        assertEquals(7140, Lessons.sumTriangularNumbers(34));
+        assertEquals(0, Lessons.sumTriangularNumbers(-291));
+        assertEquals(140205240, Lessons.sumTriangularNumbers(943));
+        assertEquals(0, Lessons.sumTriangularNumbers(-971));
+    }
+
+    @Test
+    public void makeComplement() {
+        assertEquals("TTTT", Lessons.makeComplement("AAAA"));
+        assertEquals("TAACG", Lessons.makeComplement("ATTGC"));
+        assertEquals("CATA", Lessons.makeComplement("GTAT"));
+    }
 }
