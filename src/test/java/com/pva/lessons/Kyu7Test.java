@@ -15,6 +15,17 @@ public class Kyu7Test {
         assertEquals(Kyu7.reverseLetter("ultr53o?n"), "nortlu");
         assertEquals(Kyu7.reverseLetter("ab23c"), "cba");
         assertEquals(Kyu7.reverseLetter("krish21an"), "nahsirk");
-        assertEquals("zmpp[h]tqktdxaviqzizsssikkdqatde", Kyu7.reverseLetter("e4dtaqdkkiss%sz3izqivaxd|t=kqt]h_pp mz"));
+    }
+
+    @Test
+    public void timedReading() {
+        assertEquals(7, Kyu7.timedReading(4,"The Fox asked the stork, 'How is the soup?'"));
+        assertEquals(0, Kyu7.timedReading(1,"..."));
+        assertEquals(3, Kyu7.timedReading(3,"This play was good for us."));
+        assertEquals(5, Kyu7.timedReading(3,"Suddenly he stopped, and glanced up at the houses"));
+        assertEquals(11, Kyu7.timedReading(6, "Zebras evolved among the Old World horses within the last four million years."));
+        assertEquals(6, Kyu7.timedReading(5, "Although zebra species may have overlapping ranges, they do not interbreed."));
+        assertEquals(0, Kyu7.timedReading(1,"Oh!"));
+        assertEquals(14, Kyu7.timedReading(5,"Now and then, however, he is horribly thoughtless, and seems to take a real delight in giving me pain."));
     }
 }

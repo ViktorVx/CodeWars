@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ed7ac0a-78ed-48ac-a47f-51458f86ce55" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu7Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pva/lessons/Lessons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pva/lessons/LessonsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu8Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pva/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pva/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pva/lessons/Lessons.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pva/lessons/Lessons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/pva/lessons/LessonsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/pva/lessons/LessonsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu7Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu7Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,47 +17,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Kyu8.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu8.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#stringy#0;class#Lessons#0" />
-                <element signature="method#slope#0;class#Lessons#0" />
-                <element signature="method#twiceAsOld#0;class#Lessons#0" />
-                <element signature="method#invert#0;class#Lessons#0" />
-                <element signature="method#fakeString#0;class#Lessons#0" />
-                <element signature="method#seriesSum#0;class#Lessons#0" />
-                <element signature="method#nbDig#0;class#Lessons#0" />
-                <element signature="method#findShort#0;class#Lessons#0" />
-                <element signature="method#unluckyDays#0;class#Lessons#0" />
-                <element signature="method#sumTriangularNumbers#0;class#Lessons#0" />
-                <element signature="method#makeComplement#0;class#Lessons#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kyu7.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Kyu7.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="31" />
               <folding>
-                <element signature="e#104#105#0" expanded="true" />
-                <element signature="e#151#152#0" expanded="true" />
+                <element signature="method#reverseLetter#0;class#Kyu7#0" />
+                <element signature="method#timedReading#0;class#Kyu7#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kyu7Test.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Kyu7Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu7Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="239">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -84,10 +55,12 @@
       <find>Solution</find>
       <find>TwiceAsOld</find>
       <find>Kata</find>
+      <find>doTest</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>Lessons</replace>
+      <replace>assertEquals</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -113,8 +86,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pva/IoNio/IoNio.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/pva/lessons/LessonsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pva/lessons/Lessons.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu7Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java" />
       </list>
     </option>
   </component>
@@ -249,7 +222,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Kyu7Test.reverseLetter">
+  <component name="RunManager" selected="JUnit.Kyu7Test.timedReading">
     <configuration name="CodeWars" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.pva.Main" />
       <module name="codewars" />
@@ -277,7 +250,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="Kyu8Test.findShort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Kyu7Test.timedReading" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -288,8 +261,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
-      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu8Test" />
-      <option name="METHOD_NAME" value="findShort" />
+      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu7Test" />
+      <option name="METHOD_NAME" value="timedReading" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -386,19 +359,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.CodeWars" />
-      <item itemvalue="JUnit.Kyu8Test.findShort" />
       <item itemvalue="JUnit.Kyu8Test.unluckyDays" />
       <item itemvalue="JUnit.Kyu8Test.sumTriangularNumbers" />
       <item itemvalue="JUnit.Kyu8Test.makeComplement" />
       <item itemvalue="JUnit.Kyu7Test.reverseLetter" />
+      <item itemvalue="JUnit.Kyu7Test.timedReading" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Kyu7Test.timedReading" />
         <item itemvalue="JUnit.Kyu7Test.reverseLetter" />
         <item itemvalue="JUnit.Kyu8Test.makeComplement" />
         <item itemvalue="JUnit.Kyu8Test.sumTriangularNumbers" />
         <item itemvalue="JUnit.Kyu8Test.unluckyDays" />
-        <item itemvalue="JUnit.Kyu8Test.findShort" />
       </list>
     </recent_temporary>
   </component>
@@ -413,7 +386,7 @@
       <option name="presentableId" value="Default" />
       <updated>1537864508409</updated>
       <workItem from="1537864509877" duration="13017000" />
-      <workItem from="1537964030978" duration="14499000" />
+      <workItem from="1537964030978" duration="18603000" />
     </task>
     <task id="LOCAL-00001" summary="DNA - makeComplement">
       <created>1538213402619</created>
@@ -422,43 +395,57 @@
       <option name="project" value="LOCAL" />
       <updated>1538213402619</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ReverseLetter">
+      <created>1538214033530</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1538214033530</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ReverseLetter2">
+      <created>1538215174653</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1538215174653</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 14m 31s.xml">
-      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 28m 09s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 14m 41s.xml">
-      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 29m 21s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 15m 15s.xml">
-      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 31m 03s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 15m 26s.xml">
-      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 31m 12s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_sumTriangularNumbers - 2018.09.28 at 07h 15m 42s.xml">
-      <configuration name="LessonsTest.sumTriangularNumbers" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 31m 56s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 22m 12s.xml">
-      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 34m 04s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 22m 47s.xml">
-      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 34m 45s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 25m 20s.xml">
-      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 36m 04s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 25m 31s.xml">
-      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 39m 12s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LessonsTest_makeComplement - 2018.09.29 at 12h 26m 47s.xml">
-      <configuration name="LessonsTest.makeComplement" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 40m 29s.xml">
+      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27516000" />
+    <option name="totallyTimeSpent" value="31620000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -473,19 +460,19 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32946146" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.41710666" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5374868" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.44244984" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.44244984" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -528,11 +515,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DNA - makeComplement" />
-    <option name="LAST_COMMIT_MESSAGE" value="DNA - makeComplement" />
+    <MESSAGE value="ReverseLetter" />
+    <MESSAGE value="ReverseLetter2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ReverseLetter2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="35" />
+      <option name="time" value="52" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -563,47 +552,47 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string />
+        <expression-string>Stream.of(text.replaceAll(&quot;[^A-Za-z\\s]&quot;, &quot;&quot;).split(&quot; &quot;)).filter(s -&gt; s.length()&lt;=maxLength).toArray();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>Stream.of(text.replaceAll(&quot;[^A-Za-z\\s]&quot;, &quot;&quot;).split(&quot; &quot;)).toArray()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>Stream.of(text.replaceAll(&quot;[^A-Za-z\\s]&quot;, &quot;&quot;).split(&quot; &quot;)).filter(s -&gt; s.length()&lt;=maxLength).toArray()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>cal</expression-string>
+        <expression-string>Stream.of(text.replaceAll(&quot;[^A-Za-z\\s]&quot;, &quot;&quot;).split(&quot; &quot;)).filter(s -&gt; s.length()&lt;=maxLength).count();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Math.atan(0.2)</expression-string>
+        <expression-string>Stream.of(text.split(&quot; &quot;)).map(s -&gt; s.replaceAll(&quot;[^A-Za-z]&quot;, &quot;&quot;)).toArray()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Math.atan(1.0/5.0)</expression-string>
+        <expression-string>Stream.of(text.split(&quot; &quot;)).map(s -&gt; s.replaceAll(&quot;[^A-Za-z]&quot;, &quot;&quot;)).filter(s -&gt; s.length()&lt;=maxLength).toArray()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Math.atan(dy/dx)</expression-string>
+        <expression-string>Stream.of(text.split(&quot; &quot;)).map(s -&gt; s.replaceAll(&quot;[^A-Za-z]&quot;, &quot;&quot;)).filter(s -&gt; s.length()&lt;=maxLength).count()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Math.atan(1/5)</expression-string>
+        <expression-string>Stream.of(text.split(&quot; &quot;)).map(s -&gt; s.replaceAll(&quot;[^A-Za-z]&quot;, &quot; &quot;)).toArray();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Math.atan(dx/dy)</expression-string>
+        <expression-string>Stream.of(text.split(&quot; &quot;)).map(s -&gt; s.replaceAll(&quot;[^A-Za-z]&quot;, &quot; &quot;)).filter(s -&gt; s.length()&lt;=maxLength).toArray();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -809,21 +798,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding>
-            <element signature="e#104#105#0" expanded="true" />
-            <element signature="e#151#152#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="166">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu7Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state relative-caret-position="239">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="31" />
+          <folding>
+            <element signature="method#reverseLetter#0;class#Kyu7#0" />
+            <element signature="method#timedReading#0;class#Kyu7#0" />
+          </folding>
         </state>
       </provider>
     </entry>
