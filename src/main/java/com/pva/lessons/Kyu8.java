@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.IntStream;
 
-public class Lessons {
+public class Kyu8 {
 
     public static int toBinary(int n) {
         return Integer.valueOf(Integer.toBinaryString(n));
