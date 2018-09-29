@@ -15,16 +15,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/codewars$Kyu7Test_testPow.ic" NAME="Kyu7Test.testPow Coverage Results" MODIFIED="1538222409876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.pva.lessons.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/codewars$Kyu7Test_testMult.ic" NAME="Kyu7Test.testMult Coverage Results" MODIFIED="1538222420971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.pva.lessons.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Kyu7.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="31" />
+            <state relative-caret-position="102">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#reverseLetter#0;class#Kyu7#0" />
                 <element signature="method#timedReading#0;class#Kyu7#0" />
+                <element signature="e#569#570#0" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -33,8 +44,8 @@
       <file leaf-file-name="Kyu7Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu7Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="291">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -54,13 +65,14 @@
       <find>s</find>
       <find>Solution</find>
       <find>TwiceAsOld</find>
-      <find>Kata</find>
       <find>doTest</find>
+      <find>Kata</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>Lessons</replace>
       <replace>assertEquals</replace>
+      <replace>Kyu7</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -119,9 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,6 +198,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,12 +234,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Kyu7Test.timedReading">
+  <component name="RunManager" selected="JUnit.Kyu7Test.declareWinner">
     <configuration name="CodeWars" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.pva.Main" />
       <module name="codewars" />
     </configuration>
-    <configuration name="Kyu7Test.reverseLetter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Kyu7Test.declareWinner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -239,7 +251,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
       <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu7Test" />
-      <option name="METHOD_NAME" value="reverseLetter" />
+      <option name="METHOD_NAME" value="declareWinner" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -250,7 +262,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="Kyu7Test.timedReading" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Kyu7Test.rowSumOddNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -262,7 +274,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
       <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu7Test" />
-      <option name="METHOD_NAME" value="timedReading" />
+      <option name="METHOD_NAME" value="rowSumOddNumbers" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -273,7 +285,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="Kyu8Test.makeComplement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Kyu7Test.testHat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -284,8 +296,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
-      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu8Test" />
-      <option name="METHOD_NAME" value="makeComplement" />
+      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu7Test" />
+      <option name="METHOD_NAME" value="testHat" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -296,7 +308,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="Kyu8Test.sumTriangularNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Kyu7Test.testMult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -307,8 +319,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
-      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu8Test" />
-      <option name="METHOD_NAME" value="sumTriangularNumbers" />
+      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu7Test" />
+      <option name="METHOD_NAME" value="testMult" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -319,7 +331,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="Kyu8Test.unluckyDays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Kyu7Test.testPow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="codewars" />
       <extension name="coverage">
         <pattern>
@@ -330,8 +342,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pva.lessons" />
-      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu8Test" />
-      <option name="METHOD_NAME" value="unluckyDays" />
+      <option name="MAIN_CLASS_NAME" value="com.pva.lessons.Kyu7Test" />
+      <option name="METHOD_NAME" value="testPow" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -359,19 +371,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.CodeWars" />
-      <item itemvalue="JUnit.Kyu8Test.unluckyDays" />
-      <item itemvalue="JUnit.Kyu8Test.sumTriangularNumbers" />
-      <item itemvalue="JUnit.Kyu8Test.makeComplement" />
-      <item itemvalue="JUnit.Kyu7Test.reverseLetter" />
-      <item itemvalue="JUnit.Kyu7Test.timedReading" />
+      <item itemvalue="JUnit.Kyu7Test.rowSumOddNumbers" />
+      <item itemvalue="JUnit.Kyu7Test.testPow" />
+      <item itemvalue="JUnit.Kyu7Test.testMult" />
+      <item itemvalue="JUnit.Kyu7Test.testHat" />
+      <item itemvalue="JUnit.Kyu7Test.declareWinner" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Kyu7Test.timedReading" />
-        <item itemvalue="JUnit.Kyu7Test.reverseLetter" />
-        <item itemvalue="JUnit.Kyu8Test.makeComplement" />
-        <item itemvalue="JUnit.Kyu8Test.sumTriangularNumbers" />
-        <item itemvalue="JUnit.Kyu8Test.unluckyDays" />
+        <item itemvalue="JUnit.Kyu7Test.declareWinner" />
+        <item itemvalue="JUnit.Kyu7Test.rowSumOddNumbers" />
+        <item itemvalue="JUnit.Kyu7Test.testHat" />
+        <item itemvalue="JUnit.Kyu7Test.testMult" />
+        <item itemvalue="JUnit.Kyu7Test.testPow" />
       </list>
     </recent_temporary>
   </component>
@@ -386,7 +398,8 @@
       <option name="presentableId" value="Default" />
       <updated>1537864508409</updated>
       <workItem from="1537864509877" duration="13017000" />
-      <workItem from="1537964030978" duration="18603000" />
+      <workItem from="1537964030978" duration="20557000" />
+      <workItem from="1538222209338" duration="5604000" />
     </task>
     <task id="LOCAL-00001" summary="DNA - makeComplement">
       <created>1538213402619</created>
@@ -409,43 +422,50 @@
       <option name="project" value="LOCAL" />
       <updated>1538215174653</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="TimeReading">
+      <created>1538217939708</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1538217939708</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 28m 09s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 04m 50s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 29m 21s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 05m 12s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 31m 03s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 07m 12s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 31m 12s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 07m 22s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 31m 56s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 12m 46s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 34m 04s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 13m 29s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 34m 45s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 14m 01s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 36m 04s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 17m 20s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 39m 12s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 21m 11s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Kyu7Test_timedReading - 2018.09.29 at 13h 40m 29s.xml">
-      <configuration name="Kyu7Test.timedReading" configurationId="JUnit" />
+    <history-entry file="Kyu7Test_declareWinner - 2018.09.29 at 16h 22m 14s.xml">
+      <configuration name="Kyu7Test.declareWinner" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31620000" />
+    <option name="totallyTimeSpent" value="39178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -462,6 +482,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.41710666" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5374868" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -472,7 +493,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.44244984" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4625132" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -517,11 +538,12 @@
     <MESSAGE value="DNA - makeComplement" />
     <MESSAGE value="ReverseLetter" />
     <MESSAGE value="ReverseLetter2" />
-    <option name="LAST_COMMIT_MESSAGE" value="ReverseLetter2" />
+    <MESSAGE value="TimeReading" />
+    <option name="LAST_COMMIT_MESSAGE" value="TimeReading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="52" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -599,24 +621,31 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#reverseLetter#0;class#Kyu7#0" />
+            <element signature="method#timedReading#0;class#Kyu7#0" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu7Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu8.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#stringy#0;class#Lessons#0" />
-            <element signature="method#slope#0;class#Lessons#0" />
-            <element signature="method#twiceAsOld#0;class#Lessons#0" />
-            <element signature="method#invert#0;class#Lessons#0" />
-            <element signature="method#fakeString#0;class#Lessons#0" />
-            <element signature="method#seriesSum#0;class#Lessons#0" />
-            <element signature="method#nbDig#0;class#Lessons#0" />
-            <element signature="method#findShort#0;class#Lessons#0" />
-            <element signature="method#unluckyDays#0;class#Lessons#0" />
-            <element signature="method#sumTriangularNumbers#0;class#Lessons#0" />
-            <element signature="method#makeComplement#0;class#Lessons#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,87 +682,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/FakeBinTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/FakeBin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Grow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/GrowTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Maps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/MapsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Positive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/PositiveTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/SeriesSum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/SeriesSumTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/FakeBinTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/FakeBin.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Grow.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/GrowTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Maps.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/MapsTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Positive.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/PositiveTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/SeriesSum.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/SeriesSumTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding>
-            <element signature="e#111#112#0" expanded="true" />
-            <element signature="e#128#129#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,20 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#stringy#0;class#Lessons#0" />
-            <element signature="method#slope#0;class#Lessons#0" />
-            <element signature="method#twiceAsOld#0;class#Lessons#0" />
-            <element signature="method#invert#0;class#Lessons#0" />
-            <element signature="method#fakeString#0;class#Lessons#0" />
-            <element signature="method#seriesSum#0;class#Lessons#0" />
-            <element signature="method#nbDig#0;class#Lessons#0" />
-            <element signature="method#findShort#0;class#Lessons#0" />
-            <element signature="method#unluckyDays#0;class#Lessons#0" />
-            <element signature="method#sumTriangularNumbers#0;class#Lessons#0" />
-            <element signature="method#makeComplement#0;class#Lessons#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,18 +755,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/pva/lessons/Kyu7Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="291">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pva/lessons/Kyu7.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="31" />
+        <state relative-caret-position="102">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#reverseLetter#0;class#Kyu7#0" />
             <element signature="method#timedReading#0;class#Kyu7#0" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
           </folding>
         </state>
       </provider>

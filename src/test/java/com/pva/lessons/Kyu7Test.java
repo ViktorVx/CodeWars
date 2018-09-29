@@ -2,6 +2,8 @@ package com.pva.lessons;
 
 import org.junit.Test;
 
+import java.util.*;
+
 import static org.junit.Assert.*;
 
 public class Kyu7Test {
@@ -27,5 +29,16 @@ public class Kyu7Test {
         assertEquals(6, Kyu7.timedReading(5, "Although zebra species may have overlapping ranges, they do not interbreed."));
         assertEquals(0, Kyu7.timedReading(1,"Oh!"));
         assertEquals(14, Kyu7.timedReading(5,"Now and then, however, he is horribly thoughtless, and seems to take a real delight in giving me pain."));
+    }
+
+
+    @Test
+    public void declareWinner() {
+        assertEquals("Lew", Kyu7.declareWinner(new Kyu7.Fighter("Lew", 10, 2),new Kyu7.Fighter("Harry", 5, 4), "Lew"));
+        assertEquals("Harry", Kyu7.declareWinner(new Kyu7.Fighter("Lew", 10, 2),new Kyu7.Fighter("Harry", 5, 4), "Harry"));
+        assertEquals("Harald", Kyu7.declareWinner(new Kyu7.Fighter("Harald", 20, 5), new Kyu7.Fighter("Harry", 5, 4), "Harry"));
+        assertEquals("Harald", Kyu7.declareWinner(new Kyu7.Fighter("Harald", 20, 5), new Kyu7.Fighter("Harry", 5, 4), "Harald"));
+        assertEquals("Harald", Kyu7.declareWinner(new Kyu7.Fighter("Jerry", 30, 3), new Kyu7.Fighter("Harald", 20, 5), "Jerry"));
+        assertEquals("Harald", Kyu7.declareWinner(new Kyu7.Fighter("Jerry", 30, 3), new Kyu7.Fighter("Harald", 20, 5), "Harald"));
     }
 }
