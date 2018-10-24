@@ -1,7 +1,10 @@
 package com.pva.lessons;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Kyu5 {
@@ -162,5 +165,58 @@ public class Kyu5 {
         return true;
     }
 
+    public static long[] smallest(long num) {
+        System.out.println(String.valueOf(num));
+        long[] res = new long[3];
+        String s = String.valueOf(num);
+        long from = s.length(), to = s.length();
+        long minValue = num;
+        //***
+        char[] chars = s.toCharArray();
+        List<String> stringList = new LinkedList<String>();
+        for (int i = 0; i < chars.length; i++) {
+            stringList.add(String.valueOf(chars[i]));
+        }
+        //
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < s.length(); j++) {
+                if (i == j) continue;
+                String jStr = stringList.get(j);
+                stringList.add(i>j ? i+1: i, jStr);
+                stringList.remove(i>j? j :j + 1);
+                long n = Long.valueOf(new String(String.valueOf(stringList).
+                        replaceAll("[,|\\[|\\]| ]", "")));
+                if (n <= minValue) {
+                    if (n == minValue) {
+                        if (from == j) {
+                            if (to > i) {
+                                to = i;
+                            }
+                        }
+                        if (from > j) {
+                            from = j;
+                            to = i;
+                        }
+                    } else {
+                        from = j;
+                        to = i;
+                    }
+
+
+
+                    minValue = n;
+                }
+                stringList.remove(i);
+                stringList.add(j, jStr);
+            }
+
+        }
+        //***
+        res[0] = minValue;
+        res[1] = from;
+        res[2] = to;
+
+        return res;
+    }
 
 }

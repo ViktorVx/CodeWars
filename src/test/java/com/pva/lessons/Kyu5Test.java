@@ -2,6 +2,8 @@ package com.pva.lessons;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class Kyu5Test {
@@ -113,5 +115,20 @@ public class Kyu5Test {
         map4[83][137] = 'N';
         map4[83][156] = 'N';
         assertEquals(true, Kyu5.checkCourse(map4));
+    }
+
+    @Test
+    public void smallest() {
+        testing(Long.valueOf("128276222169554528"), "[112827622269554528, 9, 0]");
+        testing(269045, "[26945, 3, 0]");
+        testing(261235, "[126235, 2, 0]");
+        testing(285365, "[238565, 3, 1]");
+        testing(296837, "[239687, 4, 1]");
+        testing(209917, "[29917, 0, 1]");
+    }
+
+    private static void testing(long n, String res) {
+        assertEquals(res,
+                Arrays.toString(Kyu5.smallest(n)));
     }
 }
