@@ -173,5 +173,17 @@ public class Kyu5Test {
         ts = new ArrayList<>(Arrays.asList(91, 74, 73, 85, 73, 81, 87));
         n = Kyu5.chooseBestSum(230, 3, ts);
         assertEquals(228, n);
+        ts = new ArrayList<>(Arrays.asList(100, 76, 56, 44, 89, 73, 68, 56, 64, 123, 2333, 144, 50, 132, 123, 34, 89));
+        n = Kyu5.chooseBestSum(230, 4, ts);
+        assertEquals(230, n);
+        ts = new ArrayList<>(Arrays.asList(100, 76, 56, 44, 89, 73, 68, 56, 64, 123, 2333, 144, 50, 132, 123, 34, 89));
+        n = Kyu5.chooseBestSum(430, 5, ts);
+        assertEquals(430, n);
+        ts = new ArrayList<>(Arrays.asList(100, 76, 56, 44, 89, 73, 68, 56, 64, 123, 2333, 144, 50, 132, 123, 34, 89));
+        m = Kyu5.chooseBestSum(430, 8, ts);
+        assertEquals(null, m);
+        ts = new ArrayList<>(Arrays.asList(100, 76, 56, 44, 89, 73, 68, 56, 64, 123, 2333, 144, 50, 132, 123, 34, 89));
+        n = Kyu5.chooseBestSum(880, 8, ts);
+        assertEquals( 876, n);
     }
 }

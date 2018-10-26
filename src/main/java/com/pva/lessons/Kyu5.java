@@ -280,10 +280,37 @@ public class Kyu5 {
             return String.format("Error => Not found: %s", num);
     }
 
-    public static Integer chooseBestSum(int t, int k, List<Integer> ls) {
-        // your code
 
-        return 0;
+    public static Integer chooseBestSum(int t, int k, List<Integer> ls) {
+        int res = recursionSum(new LinkedList<>(), 0, k, ls, 0, t);
+        return res==0 ? null : res;
+    }
+
+    public static Integer recursionSum(LinkedList<Integer> indexesList, int ress, int k, List<Integer> ls, int max, int t) {
+
+        if (indexesList.size() == k) {
+            return ress > max ? ress : max;
+        }
+
+        int nn = indexesList.size()!=0 ? indexesList.getLast() : 0;
+        for (int i = nn; i < ls.size(); i++) {
+            if (indexesList.contains(i)) continue;
+
+            int n = ls.get(i);
+            ress += n;
+            indexesList.add(i);
+
+            if (ress > t) {
+                indexesList.removeLast();
+                ress -=n;
+                continue;
+            }
+
+            max = recursionSum(indexesList, ress, k, ls, max, t);
+            ress -= ls.get(i);
+            indexesList.removeLast();
+        }
+        return max;
     }
 
 }
