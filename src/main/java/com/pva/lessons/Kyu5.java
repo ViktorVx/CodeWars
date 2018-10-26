@@ -2,10 +2,9 @@ package com.pva.lessons;
 
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Kyu5 {
 
@@ -217,6 +216,74 @@ public class Kyu5 {
         res[2] = to;
 
         return res;
+    }
+
+    public static  String phone(String strng, String num) {
+        class Contact{
+            private String name;
+            private String adress;
+            private String phone;
+            private Boolean tooManyPeople = false;
+
+            public String getPhone() {
+                return phone;
+            }
+
+            public Boolean getTooManyPeople() {
+                return tooManyPeople;
+            }
+
+            public void setTooManyPeople(Boolean tooManyPeople) {
+                this.tooManyPeople = tooManyPeople;
+            }
+
+            public Contact(String str) {
+                Pattern pattern = Pattern.compile("\\+([0-9]{1,2}-[0-9]{3}-[0-9]{3}-[0-9]{4})");
+                Matcher matcher = pattern.matcher(str);
+                matcher.find();
+                phone = matcher.group(1);
+
+                pattern = Pattern.compile("<([ 0-9a-zA-Z']+)>");
+                matcher = pattern.matcher(str);
+                if (matcher.find()) {
+                    name = matcher.group(1);
+                } else {
+                    name = "";
+                }
+                adress = str.replaceAll("\\+".concat(phone), "").replaceAll("<".concat(name).concat(">"), "").
+                        replaceAll("[^0-9a-zA-Z.-]+", " ").trim();
+
+            }
+
+            @Override
+            public String toString() {
+                if (tooManyPeople) {
+                    return String.format("Error => Too many people: %s", phone);
+                } else {
+                    return String.format("Phone => %s, Name => %s, Address => %s", phone, name, adress);
+                }
+            }
+        }
+        String[] strings = strng.split("\n");
+        Contact contact;
+        Map<String, Contact> contactMap = new HashMap<String, Contact>();
+        for (String string : strings) {
+            contact = new Contact(string);
+            if (contactMap.containsKey(contact.getPhone()))
+                contact.setTooManyPeople(true);
+            contactMap.put(contact.getPhone(), contact);
+
+        }
+        if (contactMap.containsKey(num))
+            return contactMap.get(num).toString();
+        else
+            return String.format("Error => Not found: %s", num);
+    }
+
+    public static Integer chooseBestSum(int t, int k, List<Integer> ls) {
+        // your code
+
+        return 0;
     }
 
 }

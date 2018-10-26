@@ -2,7 +2,9 @@ package com.pva.lessons;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -119,16 +121,57 @@ public class Kyu5Test {
 
     @Test
     public void smallest() {
-        testing(Long.valueOf("128276222169554528"), "[112827622269554528, 9, 0]");
-        testing(269045, "[26945, 3, 0]");
-        testing(261235, "[126235, 2, 0]");
-        testing(285365, "[238565, 3, 1]");
-        testing(296837, "[239687, 4, 1]");
-        testing(209917, "[29917, 0, 1]");
+        testing1(Long.valueOf("128276222169554528"), "[112827622269554528, 9, 0]");
+        testing1(269045, "[26945, 3, 0]");
+        testing1(261235, "[126235, 2, 0]");
+        testing1(285365, "[238565, 3, 1]");
+        testing1(296837, "[239687, 4, 1]");
+        testing1(209917, "[29917, 0, 1]");
     }
 
-    private static void testing(long n, String res) {
+    private static void testing1(long n, String res) {
         assertEquals(res,
                 Arrays.toString(Kyu5.smallest(n)));
+    }
+
+    @Test
+    public void phone() {
+        String dr = "/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010\n"
+                + "+1-541-984-3012 <P Reed> /PO Box 530; Pollocksville, NC-28573\n :+1-321-512-2222 <Paul Dive> Sequoia Alley PQ-67209\n"
+                + "+1-741-984-3090 <Peter Reedgrave> _Chicago\n :+1-921-333-2222 <Anna Stevens> Haramburu_Street AA-67209\n"
+                + "+1-111-544-8973 <Peter Pan> LA\n +1-921-512-2222 <Wilfrid Stevens> Wild Street AA-67209\n"
+                + "<Peter Gone> LA ?+1-121-544-8974 \n <R Steell> Quora Street AB-47209 +1-481-512-2222\n"
+                + "<Arthur Clarke> San Antonio $+1-121-504-8974 TT-45120\n <Ray Chandler> Teliman Pk. !+1-681-512-2222! AB-47209,\n"
+                + "<Sophia Loren> +1-421-674-8974 Bern TP-46017\n <Peter O'Brien> High Street +1-908-512-2222; CC-47209\n"
+                + "<Anastasia> +48-421-674-8974 Via Quirinal Roma\n <P Salinger> Main Street, +1-098-512-2222, Denver\n"
+                + "<C Powel> *+19-421-674-8974 Chateau des Fosses Strasbourg F-68000\n <Bernard Deltheil> +1-498-512-2222; Mount Av.  Eldorado\n"
+                + "+1-099-500-8000 <Peter Crush> Labrador Bd.\n +1-931-512-4855 <William Saurin> Bison Street CQ-23071\n"
+                + "<P Salinge> Main Street, +1-098-512-2222, Denve\n"+ "<P Salinge> Main Street, +1-098-512-2222, Denve\n";
+
+        testing(Kyu5.phone(dr, "48-421-674-8974"), "Phone => 48-421-674-8974, Name => Anastasia, Address => Via Quirinal Roma");
+        testing(Kyu5.phone(dr, "1-921-512-2222"), "Phone => 1-921-512-2222, Name => Wilfrid Stevens, Address => Wild Street AA-67209");
+        testing(Kyu5.phone(dr, "1-908-512-2222"), "Phone => 1-908-512-2222, Name => Peter O'Brien, Address => High Street CC-47209");
+        testing(Kyu5.phone(dr, "1-541-754-3010"), "Phone => 1-541-754-3010, Name => J Steeve, Address => 156 Alphand St.");
+        testing(Kyu5.phone(dr, "1-121-504-8974"), "Phone => 1-121-504-8974, Name => Arthur Clarke, Address => San Antonio TT-45120");
+        testing(Kyu5.phone(dr, "1-498-512-2222"), "Phone => 1-498-512-2222, Name => Bernard Deltheil, Address => Mount Av. Eldorado");
+        testing(Kyu5.phone(dr, "1-098-512-2222"), "Error => Too many people: 1-098-512-2222");
+        testing(Kyu5.phone(dr, "5-555-555-5555"), "Error => Not found: 5-555-555-5555");
+    }
+    private static void testing(String actual, String expected) {
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void BasicTests1() {
+        System.out.println("****** Basic Tests small numbers******");
+        List<Integer> ts = new ArrayList<>(Arrays.asList(50, 55, 56, 57, 58));
+        int n = Kyu5.chooseBestSum(163, 3, ts);
+        assertEquals(163, n);
+        ts = new ArrayList<>(Arrays.asList(50));
+        Integer m = Kyu5.chooseBestSum(163, 3, ts);
+        assertEquals(null, m);
+        ts = new ArrayList<>(Arrays.asList(91, 74, 73, 85, 73, 81, 87));
+        n = Kyu5.chooseBestSum(230, 3, ts);
+        assertEquals(228, n);
     }
 }
