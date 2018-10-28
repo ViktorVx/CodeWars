@@ -1,7 +1,6 @@
 package com.pva.lessons;
 
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -280,7 +279,6 @@ public class Kyu5 {
             return String.format("Error => Not found: %s", num);
     }
 
-
     public static Integer chooseBestSum(int t, int k, List<Integer> ls) {
         int res = recursionSum(new LinkedList<>(), 0, k, ls, 0, t);
         return res==0 ? null : res;
@@ -311,6 +309,67 @@ public class Kyu5 {
             indexesList.removeLast();
         }
         return max;
+    }
+
+    //*************************
+    static class Weight{
+        private String weightString;
+
+        public String getWeightString() {
+            return weightString;
+        }
+
+        public Weight(String weightString) {
+            this.weightString = weightString;
+        }
+    }
+    static class DigitComparator implements Comparator<Weight> {
+
+        @Override
+        public int compare(Weight o1, Weight o2) {
+            long w1 = o1.getWeightString().chars().mapToLong(Character::getNumericValue).sum();
+            long w2 = o2.getWeightString().chars().mapToLong(Character::getNumericValue).sum();
+            if (w1>w2) return 1;
+            if (w2>w1) return -1;
+            return o1.getWeightString().compareTo(o2.getWeightString());
+
+        }
+    }
+
+    public static String orderWeight(String strng) {
+
+        /*
+        public static String orderWeight(String string) {
+            String[] split = string.split(" ");
+            Arrays.sort(split, new Comparator<String>() {
+                public int compare(String a, String b) {
+                    int aWeight = a.chars().map(c -> Character.getNumericValue(c)).sum();
+                    int bWeight = b.chars().map(c -> Character.getNumericValue(c)).sum();
+                    return aWeight - bWeight != 0 ? aWeight - bWeight : a.compareTo(b);
+                }
+            });
+            return String.join(" ", split);
+        }*/
+
+
+        String[] strings = strng.split(" ");
+        List<Weight> weightList = new ArrayList<>();
+
+        for (String string : strings) {
+            weightList.add(new Weight(string));
+        }
+        //***
+        Collections.sort(weightList, new DigitComparator());
+        //***
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Weight weight : weightList) {
+            stringBuilder.append(weight.getWeightString());
+            stringBuilder.append(" ");
+        }
+
+        String res = stringBuilder.toString().trim();
+        System.out.println(res);
+        return res;
     }
 
 }
