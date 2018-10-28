@@ -193,4 +193,13 @@ public class Kyu5Test {
         assertEquals("11 11 2000 10003 22 123 1234000 44444444 9999", Kyu5.orderWeight("2000 10003 1234000 44444444 9999 11 11 22 123"));
 
     }
+
+    @Test
+    public void whoIsNext() {
+        String[] names = new String[] { "Sheldon", "Leonard", "Penny", "Rajesh", "Howard" };
+        assertEquals("Sheldon", Kyu5.WhoIsNext(names, 6));
+        assertEquals("Penny", Kyu5.WhoIsNext(names, 52));
+//        assertEquals("Leonard", Kyu5.WhoIsNext(names, Integer.valueOf("7230702951")));
+        assertEquals("Sheldon", Kyu5.WhoIsNext(names, 1));
+    }
 }

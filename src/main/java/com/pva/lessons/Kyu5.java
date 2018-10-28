@@ -58,11 +58,12 @@ public class Kyu5 {
     }
 
 
-    abstract static class Point implements Movable{
+    abstract static class Point implements Movable {
         int x, y;
 
 
-        public Point(){}
+        public Point() {
+        }
 
         public Point(int x, int y) {
             this.x = x;
@@ -83,17 +84,18 @@ public class Kyu5 {
 
         @Override
         public void move() {
-            if (mapHeight==1) return;
-            if (x==0) direction = Direction.DOWN;
-            if (x==mapHeight) direction = Direction.UP;
-            if (direction==Direction.UP) x--;
-                else x++;
+            if (mapHeight == 1) return;
+            if (x == 0) direction = Direction.DOWN;
+            if (x == mapHeight) direction = Direction.UP;
+            if (direction == Direction.UP) x--;
+            else x++;
         }
     }
 
-    static class Ship extends Point{
+    static class Ship extends Point {
 
-        public Ship(){ }
+        public Ship() {
+        }
 
         public Ship(int x, int y, int mapHeight) {
             super(x, y);
@@ -117,10 +119,10 @@ public class Kyu5 {
             for (int j = 0; j < yL; j++) {
                 if (map[i][j] == '0') continue;
                 if (map[i][j] == 'N') {
-                    patroolList.add(new Patrool(i, j, xL-1));
+                    patroolList.add(new Patrool(i, j, xL - 1));
                     continue;
                 }
-                if (map[i][j] == 'X') ship = new Ship(i, j, yL-1);
+                if (map[i][j] == 'X') ship = new Ship(i, j, yL - 1);
             }
         }
         //**
@@ -138,7 +140,7 @@ public class Kyu5 {
         }
         System.out.println("***********************");
         //**
-        while (ship.y != yL-1) {
+        while (ship.y != yL - 1) {
             for (Patrool patrool1 : patroolList) {
                 if (!check(ship, patrool1)) return false;
             }
@@ -156,9 +158,9 @@ public class Kyu5 {
         int ys = ship.y;
         int xp = patrool.x;
         int yp = patrool.y;
-        if (((xs-1==xp) && ((ys-1==yp)||(ys==yp)||(ys+1==yp)))||
-            ((xs+1==xp) && ((ys-1==yp)||(ys==yp)||(ys+1==yp)))||
-                (xs==xp && ((ys-1==yp)||(ys+1==yp)))) return false;
+        if (((xs - 1 == xp) && ((ys - 1 == yp) || (ys == yp) || (ys + 1 == yp))) ||
+                ((xs + 1 == xp) && ((ys - 1 == yp) || (ys == yp) || (ys + 1 == yp))) ||
+                (xs == xp && ((ys - 1 == yp) || (ys + 1 == yp)))) return false;
 
         return true;
     }
@@ -180,8 +182,8 @@ public class Kyu5 {
             for (int j = 0; j < s.length(); j++) {
                 if (i == j) continue;
                 String jStr = stringList.get(j);
-                stringList.add(i>j ? i+1: i, jStr);
-                stringList.remove(i>j? j :j + 1);
+                stringList.add(i > j ? i + 1 : i, jStr);
+                stringList.remove(i > j ? j : j + 1);
                 long n = Long.valueOf(new String(String.valueOf(stringList).
                         replaceAll("[,|\\[|\\]| ]", "")));
                 if (n <= minValue) {
@@ -201,7 +203,6 @@ public class Kyu5 {
                     }
 
 
-
                     minValue = n;
                 }
                 stringList.remove(i);
@@ -217,8 +218,8 @@ public class Kyu5 {
         return res;
     }
 
-    public static  String phone(String strng, String num) {
-        class Contact{
+    public static String phone(String strng, String num) {
+        class Contact {
             private String name;
             private String adress;
             private String phone;
@@ -281,7 +282,7 @@ public class Kyu5 {
 
     public static Integer chooseBestSum(int t, int k, List<Integer> ls) {
         int res = recursionSum(new LinkedList<>(), 0, k, ls, 0, t);
-        return res==0 ? null : res;
+        return res == 0 ? null : res;
     }
 
     public static Integer recursionSum(LinkedList<Integer> indexesList, int ress, int k, List<Integer> ls, int max, int t) {
@@ -290,7 +291,7 @@ public class Kyu5 {
             return ress > max ? ress : max;
         }
 
-        int nn = indexesList.size()!=0 ? indexesList.getLast() : 0;
+        int nn = indexesList.size() != 0 ? indexesList.getLast() : 0;
         for (int i = nn; i < ls.size(); i++) {
             if (indexesList.contains(i)) continue;
 
@@ -300,7 +301,7 @@ public class Kyu5 {
 
             if (ress > t) {
                 indexesList.removeLast();
-                ress -=n;
+                ress -= n;
                 continue;
             }
 
@@ -312,7 +313,7 @@ public class Kyu5 {
     }
 
     //*************************
-    static class Weight{
+    static class Weight {
         private String weightString;
 
         public String getWeightString() {
@@ -323,14 +324,15 @@ public class Kyu5 {
             this.weightString = weightString;
         }
     }
+
     static class DigitComparator implements Comparator<Weight> {
 
         @Override
         public int compare(Weight o1, Weight o2) {
             long w1 = o1.getWeightString().chars().mapToLong(Character::getNumericValue).sum();
             long w2 = o2.getWeightString().chars().mapToLong(Character::getNumericValue).sum();
-            if (w1>w2) return 1;
-            if (w2>w1) return -1;
+            if (w1 > w2) return 1;
+            if (w2 > w1) return -1;
             return o1.getWeightString().compareTo(o2.getWeightString());
 
         }
@@ -370,6 +372,26 @@ public class Kyu5 {
         String res = stringBuilder.toString().trim();
         System.out.println(res);
         return res;
+    }
+
+    public static String WhoIsNext(String[] names, Integer n) {
+        int m = Integer.valueOf(names.length);
+
+        int mm = m;
+        int i = 0;
+        while (true) {
+            int p = m * ((int) Math.pow(2, i) -1);
+            if (p <= n) {
+                mm = p;
+                i++;
+            } else break;
+        }
+        //***
+        long ost = n - mm;
+        long posl = (long) Math.pow(2, i - 1);
+        int num = (int) (ost % posl == 0 ? (ost / posl) : (ost / posl + 1));
+
+        return names[num-1];
     }
 
 }
