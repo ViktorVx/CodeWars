@@ -1,6 +1,7 @@
 package com.pva.lessons;
 
 
+import java.math.BigInteger;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -380,7 +381,7 @@ public class Kyu5 {
         int mm = m;
         int i = 0;
         while (true) {
-            int p = m * ((int) Math.pow(2, i) -1);
+            int p = m * ((int) Math.pow(2, i) - 1);
             if (p <= n) {
                 mm = p;
                 i++;
@@ -391,7 +392,32 @@ public class Kyu5 {
         long posl = (long) Math.pow(2, i - 1);
         int num = (int) (ost % posl == 0 ? (ost / posl) : (ost / posl + 1));
 
-        return names[num-1];
+        return names[num - 1];
     }
+
+    //*************************
+
+    public static List<long[]> removNb(long n) {
+        List<long[]> res = new ArrayList<>();
+
+        BigInteger nB = BigInteger.valueOf(n);
+        BigInteger sum = ((new BigInteger("2")).add(nB.subtract(BigInteger.ONE))).multiply(nB).divide(new BigInteger("2"));
+
+        for (long a = 1; a < n + 1; a++) {
+            BigInteger aB = BigInteger.valueOf(a);
+            if ((sum.subtract(aB).mod(aB.add(BigInteger.ONE)).equals(BigInteger.ZERO))) {
+                long b = (sum.subtract(aB).divide(aB.add(BigInteger.ONE)).longValue());
+                if (b<=n)
+                    res.add(new long[]{a, b});
+            }
+        }
+        return res;
+    }
+
+    public static String[] dirReduc(String[] arr) {
+        // Your code here.
+        return new String[] {};
+    }
+
 
 }

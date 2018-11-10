@@ -202,4 +202,31 @@ public class Kyu5Test {
 //        assertEquals("Leonard", Kyu5.WhoIsNext(names, Integer.valueOf("7230702951")));
         assertEquals("Sheldon", Kyu5.WhoIsNext(names, 1));
     }
+
+    @Test
+    public void removNb() {
+        List<long[]> res = new ArrayList<>();
+        res.add(new long[] {15, 21});
+        res.add(new long[] {21, 15});
+        List<long[]> a = Kyu5.removNb(26);
+        assertArrayEquals(res.get(0), a.get(0));
+        assertArrayEquals(res.get(1), a.get(1));
+
+        res = new ArrayList<>();
+        a = Kyu5.removNb(100);
+        assertTrue(res.size() == a.size());
+
+        a = Kyu5.removNb(3200016);
+        a = Kyu5.removNb(Long.MAX_VALUE);
+    }
+
+    @Test
+    public void dirReduc() {
+        assertArrayEquals("\"NORTH\", \"SOUTH\", \"SOUTH\", \"EAST\", \"WEST\", \"NORTH\", \"WEST\"",
+                new String[]{"WEST"},
+                Kyu5.dirReduc(new String[]{"NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"}));
+        assertArrayEquals("\"NORTH\",\"SOUTH\",\"SOUTH\",\"EAST\",\"WEST\",\"NORTH\"",
+                new String[]{},
+                Kyu5.dirReduc(new String[]{"NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"}));
+    }
 }
