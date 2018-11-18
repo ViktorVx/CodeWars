@@ -237,4 +237,14 @@ public class Kyu5Test {
         r = new long[] {89, 144, 0};
         assertArrayEquals(r, Kyu5.productFib(5895));
     }
+
+    @Test
+    public void listSquared() {
+        assertEquals("[[1, 1], [42, 2500], [246, 84100]]", Kyu5.listSquared2(1, 250));
+        assertEquals("[[42, 2500], [246, 84100]]", Kyu5.listSquared2(42, 250));
+        assertEquals("[[287, 84100]]", Kyu5.listSquared2(250, 500));
+        assertEquals("[]", Kyu5.listSquared2(3, 6));
+
+
+    }
 }
