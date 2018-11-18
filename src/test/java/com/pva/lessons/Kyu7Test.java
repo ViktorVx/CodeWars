@@ -41,4 +41,12 @@ public class Kyu7Test {
         assertEquals("Harald", Kyu7.declareWinner(new Kyu7.Fighter("Jerry", 30, 3), new Kyu7.Fighter("Harald", 20, 5), "Jerry"));
         assertEquals("Harald", Kyu7.declareWinner(new Kyu7.Fighter("Jerry", 30, 3), new Kyu7.Fighter("Harald", 20, 5), "Harald"));
     }
+
+    @Test
+    public void convertBinaryArrayToInt() {
+        assertEquals(1, Kyu7.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(0,0,0,1))));
+        assertEquals(15, Kyu7.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(1,1,1,1))));
+        assertEquals(6, Kyu7.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(0,1,1,0))));
+        assertEquals(9, Kyu7.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(1,0,0,1))));
+    }
 }

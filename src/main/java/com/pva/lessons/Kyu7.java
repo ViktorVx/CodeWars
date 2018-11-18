@@ -51,4 +51,8 @@ public class Kyu7 {
             turn1 = !turn1;
         }
     }
+
+    public static int ConvertBinaryArrayToInt(List<Integer> binary) {
+        return Integer.parseInt(binary.toString().replaceAll("\\[|\\]|,| ", ""),2);
+    }
 }

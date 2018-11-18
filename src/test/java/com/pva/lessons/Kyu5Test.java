@@ -229,4 +229,12 @@ public class Kyu5Test {
                 new String[]{},
                 Kyu5.dirReduc(new String[]{"NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"}));
     }
+
+    @Test
+    public void productFib() {
+        long[] r = new long[] {55, 89, 1};
+        assertArrayEquals(r, Kyu5.productFib(4895));
+        r = new long[] {89, 144, 0};
+        assertArrayEquals(r, Kyu5.productFib(5895));
+    }
 }
