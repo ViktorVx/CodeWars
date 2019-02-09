@@ -2,9 +2,7 @@ package com.pva.lessons;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -247,4 +245,22 @@ public class Kyu5Test {
 
 
     }
+
+    @Test
+    public void going() {
+        final double DELTA = 1e-10;
+        assertEquals(1.275, Kyu5.going(5), DELTA);
+        assertEquals(1.2125, Kyu5.going(6), DELTA);
+        assertEquals(1.173214, Kyu5.going(7), DELTA);
+        assertEquals(1.001915, Kyu5.going(523), DELTA);
+    }
+
+    @Test
+    public void greedy() {
+        assertEquals("Score for [5,1,3,4,1] must be 250:", 250, Kyu5.greedy(new int[]{5,1,3,4,1}));
+        assertEquals("Score for [1,1,1,3,1] must be 1100:", 1100, Kyu5.greedy(new int[]{1,1,1,3,1}));
+        assertEquals("Score for [2,4,4,5,4] must be 450:", 450, Kyu5.greedy(new int[]{2,4,4,5,4}));
+    }
+
+
 }

@@ -1,10 +1,15 @@
 package com.pva.lessons;
 
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Kyu5 {
 
@@ -1414,5 +1419,58 @@ public class Kyu5 {
         System.out.println(r);
         return r;
     }
+
+    public static double going(int n) {
+        BigInteger factorial = IntStream.rangeClosed(2, n).parallel().mapToObj(BigInteger::valueOf).reduce(BigInteger::multiply).get();
+        Double factD = factorial.doubleValue();
+
+        MathContext mc = new MathContext(20, RoundingMode.FLOOR);
+        BigDecimal one = BigDecimal.ONE.divide(new BigDecimal(factorial.toString()), mc);
+
+        BigInteger two = BigInteger.ZERO;
+//        for (int i = 1; i <=n; i++) {
+//            two = two.add(IntStream.rangeClosed(1, i).parallel().mapToObj(BigInteger::valueOf).reduce(BigInteger::multiply).get());
+//        }
+        BigInteger f = BigInteger.ONE;
+        for (int i = 1; i <=n; i++) {
+            f = f.multiply(new BigInteger(String.valueOf(i)));
+            two = two.add(f);
+        }
+
+        BigDecimal res = one.multiply(new BigDecimal(two.toString()));
+        Double resD = res.doubleValue();
+
+        return Math.floor(resD * 1000000)/1000000.0;
+    }
+
+    public static int greedy(int[] dice){
+        int res = 0;
+        int[] count = new int[]{0, 0, 0, 0, 0, 0};
+        int[] weight = new int[]{100, 0, 0, 0, 50, 0};
+        int[] weight3 = new int[]{1000, 200, 300, 400, 500, 600};
+
+        for (int die : dice) count[die-1]++;
+
+        for (int i = 0; i < count.length; i++) res+=(count[i]/3*weight3[i]) + (count[i]%3 * weight[i]);
+
+        return res;
+    }
+
+    public static int[] sameFactRev(int nMax) {
+        List<Integer> integers = new ArrayList<>();
+        int[] factRev = new int[]{1089, 2178, 4356, 6534, 8712, 9801, 10989, 21978, 24024,
+                26208, 42042, 43956, 48048, 61248, 65934, 80262, 84084,
+                84216, 87912, 98901, 109989, 219978, 231504, 234234,
+                242424, 253344, 255528, 264264, 272646, 275184, 277816,
+                288288, 405132, 424242, 432432, 439956};
+
+        for (int i : factRev) if (i <= nMax) integers.add(i); else break;
+
+        int[] res = new int[integers.size()];
+        for (int i = 0; i < res.length; i++) res[i] = integers.get(i);
+
+        return res;
+    }
+
 
 }
