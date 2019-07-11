@@ -49,4 +49,10 @@ public class Kyu7Test {
         assertEquals(6, Kyu7.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(0,1,1,0))));
         assertEquals(9, Kyu7.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(1,0,0,1))));
     }
+
+    @Test
+    public void testCase1() {
+        assertEquals("Nope!", 5, Kyu7.getCount("abracadabra"));
+    }
+
 }

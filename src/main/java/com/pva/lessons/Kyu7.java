@@ -1,6 +1,7 @@
 package com.pva.lessons;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class Kyu7 {
@@ -54,5 +55,10 @@ public class Kyu7 {
 
     public static int ConvertBinaryArrayToInt(List<Integer> binary) {
         return Integer.parseInt(binary.toString().replaceAll("\\[|\\]|,| ", ""),2);
+    }
+
+    public static int getCount(String str) {
+        List<Integer> ltr = Arrays.asList(97, 101, 105, 111, 117);
+        return (int) str.toLowerCase().chars().filter(ltr::contains).count();
     }
 }
