@@ -79,4 +79,8 @@ public class Kyu7 {
                 collect(Collectors.joining("-"));
     }
 
+    public static String disemvowel(String str) {
+        return str == null ? "" : str.replaceAll("[aeiouAEIOU]+", "");
+    }
+
 }

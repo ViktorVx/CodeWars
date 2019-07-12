@@ -78,4 +78,13 @@ public class Kyu7Test {
     private static void testing(String actual, String expected) {
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void FixedTests() {
+        assertEquals("Ths wbst s fr lsrs LL!",Kyu7.disemvowel("This website is for losers LOL!")
+        );
+        assertEquals("N ffns bt,\nYr wrtng s mng th wrst 'v vr rd", Kyu7.disemvowel(
+                "No offense but,\nYour writing is among the worst I've ever read"));
+        assertEquals( "Wht r y,  cmmnst?", Kyu7.disemvowel("What are you, a communist?"));
+    }
 }
