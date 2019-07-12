@@ -348,4 +348,13 @@ public class Kyu6Test {
         assertEquals(2, Kyu6.persistence(25));
         assertEquals(4, Kyu6.persistence(999));
     }
+
+    @Test
+    public void whoLikesIt() {
+        assertEquals("no one likes this", Kyu6.whoLikesIt());
+        assertEquals("Peter likes this", Kyu6.whoLikesIt("Peter"));
+        assertEquals("Jacob and Alex like this", Kyu6.whoLikesIt("Jacob", "Alex"));
+        assertEquals("Max, John and Mark like this", Kyu6.whoLikesIt("Max", "John", "Mark"));
+        assertEquals("Alex, Jacob and 2 others like this", Kyu6.whoLikesIt("Alex", "Jacob", "Mark", "Max"));
+    }
 }
