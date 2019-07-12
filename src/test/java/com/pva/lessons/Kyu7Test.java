@@ -55,4 +55,14 @@ public class Kyu7Test {
         assertEquals("Nope!", 5, Kyu7.getCount("abracadabra"));
     }
 
+    @Test
+    public void evenTests() {
+        assertEquals("es", Kyu7.getMiddle("test"));
+        assertEquals("dd", Kyu7.getMiddle("middle"));
+        assertEquals("t", Kyu7.getMiddle("testing"));
+        assertEquals("A", Kyu7.getMiddle("A"));
+        assertEquals("", Kyu7.getMiddle(null));
+        assertEquals("", Kyu7.getMiddle(""));
+    }
+
 }

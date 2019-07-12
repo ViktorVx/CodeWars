@@ -61,4 +61,11 @@ public class Kyu7 {
         List<Integer> ltr = Arrays.asList(97, 101, 105, 111, 117);
         return (int) str.toLowerCase().chars().filter(ltr::contains).count();
     }
+
+    public static String getMiddle(String word) {
+        if (word == null) return "";
+        int hlf = word.length() / 2;
+        if (hlf < 2) return word;
+        return word.length() % 2 == 1 ?  word.substring(hlf, hlf + 1) : word.substring(hlf - 1, hlf +1);
+    }
 }
