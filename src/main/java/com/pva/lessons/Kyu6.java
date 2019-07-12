@@ -364,7 +364,13 @@ public class Kyu6 {
 
     }
 
+    public static int persistence(long n) {
+        return step(0, n);
+    }
 
-
+    private static int step(int step, long n) {
+        return n < 10 ? step : step(++step,
+                String.valueOf(n).chars().mapToObj(ch -> Integer.parseInt(String.valueOf((char) ch))).reduce(1, (a, b) -> a * b));
+    }
 
 }

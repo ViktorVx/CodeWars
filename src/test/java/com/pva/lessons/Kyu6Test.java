@@ -340,4 +340,12 @@ public class Kyu6Test {
         assertEquals("9699690", Kyu6.numPrimorial(8));
         assertEquals("223092870", Kyu6.numPrimorial(9));
     }
+
+    @Test
+    public void persistence() {
+        assertEquals(3, Kyu6.persistence(39));
+        assertEquals(0, Kyu6.persistence(4));
+        assertEquals(2, Kyu6.persistence(25));
+        assertEquals(4, Kyu6.persistence(999));
+    }
 }
