@@ -2,6 +2,8 @@ package com.pva.lessons;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Kyu7 {
@@ -68,4 +70,13 @@ public class Kyu7 {
         if (hlf < 2) return word;
         return word.length() % 2 == 1 ?  word.substring(hlf, hlf + 1) : word.substring(hlf - 1, hlf +1);
     }
+
+    public static String accum(String s) {
+        AtomicInteger ai = new AtomicInteger(0);
+        return s.chars().
+                mapToObj(ch -> String.valueOf((char) ch).toUpperCase()).
+                map(ch -> ch + Stream.generate(()->ch.toLowerCase()).limit(ai.getAndIncrement()).collect(Collectors.joining())).
+                collect(Collectors.joining("-"));
+    }
+
 }
