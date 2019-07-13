@@ -58,4 +58,23 @@ public class Kyu4Test {
         expected.sort(comp);
         Assert.assertEquals("For observed PIN " + entered, expected, result);
     }
+
+    @Test
+    public void nextSmaller() {
+        assertEquals(12, Kyu4.nextSmaller(21));
+        assertEquals(790, Kyu4.nextSmaller(907));
+        assertEquals(513, Kyu4.nextSmaller(531));
+        assertEquals(-1, Kyu4.nextSmaller(1027));
+        assertEquals(414, Kyu4.nextSmaller(441));
+        assertEquals(123456789, Kyu4.nextSmaller(123456798));
+        assertEquals(-1, Kyu4.nextSmaller(9999999999L));
+        assertEquals(51226262627551L, Kyu4.nextSmaller(51226262651257L));
+        assertEquals(59884848459853L, Kyu4.nextSmaller(59884848483559L));
+        assertEquals(-1, Kyu4.nextSmaller(202233445566L));
+        assertEquals(-1, Kyu4.nextSmaller(1023456789L));
+        assertEquals(1072, Kyu4.nextSmaller(1207));
+        assertEquals(208, Kyu4.nextSmaller(280L));
+        assertEquals(-1, Kyu4.nextSmaller(2));
+
+    }
 }

@@ -2,6 +2,7 @@ package com.pva.lessons;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Kyu4 {
 
@@ -97,6 +98,40 @@ public class Kyu4 {
         }
         Integer l = Character.getNumericValue(observed.charAt(level));
         for (int i = 0; i < ARR[l].length; i++) generatePin(resList, codeLen, level + 1, observed, pin.concat(ARR[l][i]));
+    }
+
+    public static long nextSmaller(long n) {
+        String s = String.valueOf(n);
+        if (s.length() == 1) return -1;
+        //****
+        if (s.charAt(1) == '0') {
+            Integer iLast = -1;
+            boolean isGrouth = true;
+            for (char c : s.toCharArray()) {
+                Integer i = Character.getNumericValue(c);
+                if (i == 0) continue;
+                if (i < iLast) {
+                    isGrouth = false;
+                    break;
+                }
+                iLast = i;
+            }
+            if (isGrouth) return -1;
+        }
+        //****
+        char[] nChars = s.toCharArray();
+        Set<Character> ss = new String(nChars).chars().mapToObj(i->(char) i).collect(Collectors.toSet());
+        if (ss.size() == 1) return -1;
+        int len = nChars.length;
+        Arrays.sort(nChars);
+
+        while (n != 0) {
+            char[] chars = String.valueOf(--n).toCharArray();
+            if (chars.length < len) break;
+            Arrays.sort(chars);
+            if (Arrays.equals(chars, nChars)) return n;
+        }
+        return -1;
     }
 
 }
