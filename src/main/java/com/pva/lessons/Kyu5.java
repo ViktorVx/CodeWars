@@ -1479,5 +1479,45 @@ public class Kyu5 {
                                 toArray()).toArray(int[][]::new);
     }
 
+    public static String change(String s, String prog, String version) {
+        Pattern pattern1 = Pattern.compile("^\\+[1]-[0-9]{3}-[0-9]{3}-[0-9]{4}$");
+        Pattern pattern2 = Pattern.compile("^[0-9]+.[0-9]+$");
+        StringBuilder res = new StringBuilder();
+        String[] sl = s.split("\n");
+        for (String s1 : sl) {
+            Matcher matcher;
+            String sr = s1.split(":")[0].trim();
+            switch (sr) {
+                case "Program title":
+                    res.append("Program: ").append(prog).append(" ");
+                    break;
+                case "Author":
+                    res.append("Author: g964 ");
+                    break;
+                case "Phone":
+                    String sPhone = s1.split(":")[1].trim();
+                    matcher = pattern1.matcher(sPhone);
+                    if (!matcher.find()) return "ERROR: VERSION or PHONE";
+                    res.append("Phone: +1-503-555-0090 ");
+                    break;
+                case "Date":
+                    res.append("Date: 2019-01-01 ");
+                    break;
+                case "Version":
+                    if (!s1.contains(".")) return "ERROR: VERSION or PHONE";
+                    String ss1 = s1.split(":")[1].trim();
+                    matcher = pattern2.matcher(ss1);
+                    if (!matcher.find()) {
+                        return "ERROR: VERSION or PHONE";
+                    } else {
+                        res.append("Version: ");
+                        res.append(ss1.equals("2.0") ? "2.0" : version);
+                    }
+                    break;
+            }
+        }
+        return res.toString();
+    }
+
 
 }

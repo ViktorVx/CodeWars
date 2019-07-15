@@ -296,4 +296,35 @@ public class Kyu5Test {
         }, Kyu5.multiply(a1, b1));
 
     }
+
+    @Test
+    public void change() {
+        String s1="Program title: Primes\nAuthor: Kern\nCorporation: Gold\nPhone: +1-503-555-0091\nDate: Tues April 9, 2005\nVersion: 6.7\nLevel: Alpha";
+        dotest(s1, "Ladder", "1.1", "Program: Ladder Author: g964 Phone: +1-503-555-0090 Date: 2019-01-01 Version: 1.1");
+        String s11="Program title: Hammer\nAuthor: Tolkien\nCorporation: IB\nPhone: +1-503-555-0090\nDate: Tues March 29, 2017\nVersion: 2.0\nLevel: Release";
+        dotest(s11, "Balance", "1.5.6", "Program: Balance Author: g964 Phone: +1-503-555-0090 Date: 2019-01-01 Version: 2.0");
+        String s12="Program title: Primes\nAuthor: Kern\nCorporation: Gold\nPhone: +1-503-555-009\nDate: Tues April 9, 2005\nVersion: 6.7\nLevel: Alpha";
+        dotest(s12, "Ladder", "1.1", "ERROR: VERSION or PHONE");
+        String s13 = "Program title: Circular\n" +
+                "Author: Cornwell\n" +
+                "Corporation: MS\n" +
+                "Phone: +1-503-555-0073\n" +
+                "Date: Tues March 10, 2004\n" +
+                "Version: 500\n" +
+                "Level: Release\n" +
+                "prog: Exhaust\n" +
+                "version: 2.0";
+        dotest(s12, "Exhaust", "2.0", "ERROR: VERSION or PHONE");
+
+    }
+
+    private static void dotest(String s, String prog, String version, String exp) {
+        System.out.println("s:\n" + s);
+        System.out.println("prog: " + prog);
+        System.out.println("version: " + version);
+        String ans = Kyu5.change(s, prog, version);
+        System.out.println("Actual: " + ans);
+        System.out.println("Expect: " + exp);
+        assertEquals(exp, ans);
+    }
 }
