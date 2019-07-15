@@ -9,7 +9,6 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Kyu5 {
 
@@ -1470,6 +1469,14 @@ public class Kyu5 {
         for (int i = 0; i < res.length; i++) res[i] = integers.get(i);
 
         return res;
+    }
+
+    public static int[][] multiply(int[][] a, int[][] b) {
+        return a[0].length!= b.length ? null :
+                java.util.Arrays.stream(a).
+                        map(r -> java.util.stream.IntStream.range(0, b[0].length).
+                                map(i -> java.util.stream.IntStream.range(0, b.length).map(j -> r[j] * b[j][i]).sum()).
+                                toArray()).toArray(int[][]::new);
     }
 
 

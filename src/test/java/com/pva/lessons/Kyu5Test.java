@@ -263,4 +263,37 @@ public class Kyu5Test {
     }
 
 
+    @Test
+    public void multiply() {
+        int[][] a = new int[][] {
+                new int[] {1, 2, 3},
+                new int[] {0, 1, 4},
+                new int[] {5, 6, 0}
+        };
+        int[][] b = new int[][] {
+                new int[] {-24, 18, 5},
+                new int[] {20, -15, -4},
+                new int[] {-5, 4, 1}
+        };
+        assertArrayEquals(new int[][] {
+                new int[] {1, 0, 0},
+                new int[] {0, 1, 0},
+                new int[] {0, 0, 1}
+        }, Kyu5.multiply(a, b));
+        //***
+        int[][] a1 = new int[][] {
+                new int[] {1, 2, 0},
+                new int[] {0, 1, 2},
+        };
+        int[][] b1 = new int[][] {
+                new int[] {3, 1},
+                new int[] {2, 4},
+                new int[] {3, 7}
+        };
+        assertArrayEquals(new int[][] {
+                new int[] {7, 9},
+                new int[] {8, 18},
+        }, Kyu5.multiply(a1, b1));
+
+    }
 }
