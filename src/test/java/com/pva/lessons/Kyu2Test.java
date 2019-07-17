@@ -8,7 +8,8 @@ import static org.junit.Assert.assertEquals;
 
 public class Kyu2Test {
 
-    private static Pattern regex = Pattern.compile(Kyu2.multipleOf7());
+//    private static Pattern regex = Pattern.compile(Kyu2.multipleOf7());
+    private static Pattern regex = Pattern.compile(Kyu2.multipleOf7Full());
 
     @Test
     public void EdgeCases() {
