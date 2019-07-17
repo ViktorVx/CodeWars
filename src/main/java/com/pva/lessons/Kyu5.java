@@ -62,7 +62,6 @@ public class Kyu5 {
         public void move();
     }
 
-
     abstract static class Point implements Movable {
         int x, y;
 
@@ -318,6 +317,7 @@ public class Kyu5 {
     }
 
     //*************************
+
     static class Weight {
         private String weightString;
 
@@ -464,7 +464,6 @@ public class Kyu5 {
         }
         return null;
     }
-
 
     public static String listSquared2(long m, long n) {
 
