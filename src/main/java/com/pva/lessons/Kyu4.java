@@ -1,9 +1,11 @@
 package com.pva.lessons;
 
 
+import java.math.BigInteger;
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Kyu4 {
 
@@ -137,6 +139,38 @@ public class Kyu4 {
 
     public static Pattern pattern() {
         return Pattern.compile("(((((0)|(0)(0)*(0)))|(((1)|(0)(0)*(1))((0)))(((1)(0)*(1))((0)))*(((1)|(1)(0)*(0))))|((((1)|(0)(0)*(1))((1)))|(((1)|(0)(0)*(1))((0)))(((1)(0)*(1))((0)))*(((1)(0)*(1))((1))))((((0))((1)))|(((1))|((0))((0)))(((1)(0)*(1))((0)))*(((1)(0)*(1))((1))))*((((1))|((0))((0)))(((1)(0)*(1))((0)))*(((1)|(1)(0)*(0)))))|(((((1)|(0)(0)*(1))((0)))(((1)(0)*(1))((0)))*(((0))))|((((1)|(0)(0)*(1))((1)))|(((1)|(0)(0)*(1))((0)))(((1)(0)*(1))((0)))*(((1)(0)*(1))((1))))((((0))((1)))|(((1))|((0))((0)))(((1)(0)*(1))((0)))*(((1)(0)*(1))((1))))*((((1))|((0))((0)))(((1)(0)*(1))((0)))*(((0)))))(((((1))))|((((0))))((((0))((1)))|(((1))|((0))((0)))(((1)(0)*(1))((0)))*(((1)(0)*(1))((1))))*((((1))|((0))((0)))(((1)(0)*(1))((0)))*(((0)))))*(((((0))))((((0))((1)))|(((1))|((0))((0)))(((1)(0)*(1))((0)))*(((1)(0)*(1))((1))))*((((1))|((0))((0)))(((1)(0)*(1))((0)))*(((1)|(1)(0)*(0)))))");
+    }
+
+    public static String sumOfDivided(int[] l) {
+        List<Integer> intList = IntStream.of(l).sorted().boxed().collect(Collectors.toList());
+
+        Collections.sort(intList, (o1, o2) -> -Integer.compare(Math.abs(o1), Math.abs(o2)));
+
+        Map<Integer, Long> resMap = new HashMap<>();
+
+        Integer max = intList.stream().map(Math::abs).max(Integer::max).get();
+
+        BigInteger pff = BigInteger.ONE;
+        while (true) {
+            pff = pff.nextProbablePrime();
+            Integer pf = pff.intValue();
+            if (pf >= max) break;
+            for (Integer integer : intList) {
+                if (integer % pf == 0) {
+                    if (!resMap.containsKey(pf)) resMap.put(pf, 0L);
+                    resMap.compute(pf, (key, val) -> val+=integer);
+                }
+            }
+        }
+
+        StringBuilder res = new StringBuilder();
+        List<Integer> keys = new ArrayList<>(resMap.keySet());
+        Collections.sort(keys);
+        for (Integer key : keys) {
+            res.append(String.format("(%s %s)", String.valueOf(key), String.valueOf(resMap.get(key))));
+        }
+
+        return res.toString();
     }
 
 }

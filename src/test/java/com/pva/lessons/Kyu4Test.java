@@ -109,4 +109,17 @@ public class Kyu4Test {
             assertEquals(String.format("Should work with '%s':", toTest), exp, Kyu4.pattern().matcher(toTest).matches());
         }
     }
+
+    @Test
+    public void testOne() {
+        int[] lst = new int[] {12, 15};
+        assertEquals("(2 12)(3 27)(5 15)", Kyu4.sumOfDivided(lst));
+
+        lst = new int[] {-94, -68, 145, 219, 192, 418, 106, 200, 314, -3, 477, 17, 159, 224, 64};
+        assertEquals("(2 1356)(3 1044)(5 345)(7 224)(11 418)(17 -51)(19 418)(29 145)(47 -94)(53 742)(73 219)(157 314)", Kyu4.sumOfDivided(lst));
+
+        lst = new int[] {-94, -68, 145, 219, 192, 418, 106, 200, 314, -3, 477, 17, 159, 224, 64};
+        assertEquals("(2 1356)(3 1044)(5 345)(7 224)(11 418)(17 -51)(19 418)(29 145)(47 -94)(53 742)(73 219)(157 314)", Kyu4.sumOfDivided(lst));
+    }
+
 }
