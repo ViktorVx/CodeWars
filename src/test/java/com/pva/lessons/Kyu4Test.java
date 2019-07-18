@@ -78,6 +78,18 @@ public class Kyu4Test {
 
     }
 
+    @Test
+    public void basicTests() {
+        assertEquals(21, Kyu4.nextBiggerNumber(12));
+        assertEquals(531, Kyu4.nextBiggerNumber(513));
+        assertEquals(2071, Kyu4.nextBiggerNumber(2017));
+        assertEquals(441, Kyu4.nextBiggerNumber(414));
+        assertEquals(414, Kyu4.nextBiggerNumber(144));
+        assertEquals(59884848483559L, Kyu4.nextBiggerNumber(59884848459853L));
+        assertEquals(-1, Kyu4.nextBiggerNumber(9999999999L));
+        assertEquals(-1, Kyu4.nextBiggerNumber(9876543210L));
+    }
+
     private static Object[][] testArr = new Object[][] {
             new Object[] {false, "" },
             new Object[] {false, "abc"},
@@ -120,6 +132,131 @@ public class Kyu4Test {
 
         lst = new int[] {-94, -68, 145, 219, 192, 418, 106, 200, 314, -3, 477, 17, 159, 224, 64};
         assertEquals("(2 1356)(3 1044)(5 345)(7 224)(11 418)(17 -51)(19 418)(29 145)(47 -94)(53 742)(73 219)(157 314)", Kyu4.sumOfDivided(lst));
+    }
+
+    @Test
+    public void firstTest()
+    {
+        List<String> myList = new ArrayList<String>(Arrays.asList(
+                "A_Red",
+                "B_Yellow",
+                "A_Red",
+                "B_Yellow",
+                "A_Red",
+                "B_Yellow",
+                "G_Red",
+                "B_Yellow"
+        ));
+        assertEquals("it should return Yellow", "Yellow", Kyu4.whoIsWinner(myList));
+    }
+
+    @Test
+    public void secondTest()
+    {
+        List<String> myList = new ArrayList<String>(Arrays.asList(
+                "C_Yellow",
+                "E_Red",
+                "G_Yellow",
+                "B_Red",
+                "D_Yellow",
+                "B_Red",
+                "B_Yellow",
+                "G_Red",
+                "C_Yellow",
+                "C_Red",
+                "D_Yellow",
+                "F_Red",
+                "E_Yellow",
+                "A_Red",
+                "A_Yellow",
+                "G_Red",
+                "A_Yellow",
+                "F_Red",
+                "F_Yellow",
+                "D_Red",
+                "B_Yellow",
+                "E_Red",
+                "D_Yellow",
+                "A_Red",
+                "G_Yellow",
+                "D_Red",
+                "D_Yellow",
+                "C_Red"
+        ));
+        assertEquals("it should return Yellow", "Yellow", Kyu4.whoIsWinner(myList));
+    }
+
+    @Test
+    public void thirdTest()
+    {
+        List<String> myList = new ArrayList<String>(Arrays.asList(
+                "A_Yellow",
+                "B_Red",
+                "B_Yellow",
+                "C_Red",
+                "G_Yellow",
+                "C_Red",
+                "C_Yellow",
+                "D_Red",
+                "G_Yellow",
+                "D_Red",
+                "G_Yellow",
+                "D_Red",
+                "F_Yellow",
+                "E_Red",
+                "D_Yellow"
+        ));
+        assertEquals("it should return Red", "Red", Kyu4.whoIsWinner(myList));
+    }
+
+    @Test
+    public void randomTest()
+    {
+        List<String> myList = new ArrayList<String>(Arrays.asList(
+                "E_Yellow",
+                "D_Red",
+                "F_Yellow",
+                "D_Red",
+                "A_Yellow",
+                "C_Red",
+                "D_Yellow",
+                "A_Red",
+                "G_Yellow",
+                "C_Red",
+                "C_Yellow",
+                "A_Red",
+                "E_Yellow",
+                "B_Red",
+                "D_Yellow",
+                "B_Red",
+                "G_Yellow",
+                "F_Red",
+                "C_Yellow",
+                "E_Red",
+                "E_Yellow",
+                "C_Red",
+                "B_Yellow",
+                "A_Red",
+                "C_Yellow",
+                "B_Red",
+                "F_Yellow",
+                "B_Red",
+                "A_Yellow",
+                "A_Red",
+                "E_Yellow",
+                "D_Red",
+                "G_Yellow",
+                "D_Red",
+                "G_Yellow",
+                "B_Red",
+                "E_Yellow",
+                "F_Red",
+                "G_Yellow",
+                "G_Red",
+                "F_Yellow",
+                "F_Red"
+        ));
+        assertEquals("it should return Red", "Red", Kyu4.whoIsWinner(myList));
     }
 
 }
