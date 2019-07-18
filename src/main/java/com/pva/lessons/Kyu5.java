@@ -39,20 +39,6 @@ public class Kyu5 {
         return res;
     }
 
-    public static String listSquared(long m, long n) {
-        //"[[42, 2500], [246, 84100]]"
-        long sq = 0;
-        String res = "[";
-        for (long j = m; j <= n; j++) {
-            for (long i = 1; i <= j; i++) {
-                if (j % i == 0) sq += i * i;
-                if (i >= m && Math.sqrt(sq) % 1 == 0) res = res.concat(String.format("[%d, %d], ", i, sq));
-            }
-        }
-
-        return res.substring(0, res.length() - 2).concat("]");
-    }
-
     //******************************************************************************************************************
     enum Direction {
         DOWN, UP;
@@ -111,7 +97,7 @@ public class Kyu5 {
         }
     }
 
-    public static boolean checkCourse(char[][] map) {
+    static boolean checkCourse(char[][] map) {
 
         final int xL = map.length;
         final int yL = map[0].length;
@@ -157,7 +143,7 @@ public class Kyu5 {
         return true;
     }
 
-    public static boolean check(Ship ship, Patrool patrool) {
+    static boolean check(Ship ship, Patrool patrool) {
         int xs = ship.x;
         int ys = ship.y;
         int xp = patrool.x;
@@ -169,7 +155,9 @@ public class Kyu5 {
         return true;
     }
 
-    public static long[] smallest(long num) {
+    //******************************************************************************************************************
+
+    static long[] smallest(long num) {
         System.out.println(String.valueOf(num));
         long[] res = new long[3];
         String s = String.valueOf(num);
@@ -222,7 +210,7 @@ public class Kyu5 {
         return res;
     }
 
-    public static String phone(String strng, String num) {
+    static String phone(String strng, String num) {
         class Contact {
             private String name;
             private String adress;
@@ -284,12 +272,12 @@ public class Kyu5 {
             return String.format("Error => Not found: %s", num);
     }
 
-    public static Integer chooseBestSum(int t, int k, List<Integer> ls) {
+    static Integer chooseBestSum(int t, int k, List<Integer> ls) {
         int res = recursionSum(new LinkedList<>(), 0, k, ls, 0, t);
         return res == 0 ? null : res;
     }
 
-    public static Integer recursionSum(LinkedList<Integer> indexesList, int ress, int k, List<Integer> ls, int max, int t) {
+    static Integer recursionSum(LinkedList<Integer> indexesList, int ress, int k, List<Integer> ls, int max, int t) {
 
         if (indexesList.size() == k) {
             return ress > max ? ress : max;
@@ -316,7 +304,7 @@ public class Kyu5 {
         return max;
     }
 
-    //*************************
+    //******************************************************************************************************************
 
     static class Weight {
         private String weightString;
@@ -343,7 +331,7 @@ public class Kyu5 {
         }
     }
 
-    public static String orderWeight(String strng) {
+    static String orderWeight(String strng) {
 
         /*
         public static String orderWeight(String string) {
@@ -379,7 +367,7 @@ public class Kyu5 {
         return res;
     }
 
-    public static String WhoIsNext(String[] names, Integer n) {
+    static String WhoIsNext(String[] names, Integer n) {
         int m = Integer.valueOf(names.length);
 
         int mm = m;
@@ -399,9 +387,9 @@ public class Kyu5 {
         return names[num - 1];
     }
 
-    //*************************
+    //******************************************************************************************************************
 
-    public static List<long[]> removNb(long n) {
+    static List<long[]> removNb(long n) {
         List<long[]> res = new ArrayList<>();
 
         BigInteger nB = BigInteger.valueOf(n);
@@ -418,8 +406,7 @@ public class Kyu5 {
         return res;
     }
 
-    //*************************
-    public static String[] dirReduc(String[] arr) {
+    static String[] dirReduc(String[] arr) {
         Stack<String> resStack = new Stack<>();
         for (String s : arr) {
             if (resStack.size() == 0) {
@@ -449,7 +436,7 @@ public class Kyu5 {
         return resStack.toArray(new String[resStack.size()]);
     }
 
-    public static long[] productFib(long prod) {
+    static long[] productFib(long prod) {
         final long[] FIB = new long[]{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765,
                 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578,
                 5702887, 9227465, 14930352, 24157817, 39088169, 63245986, 102334155, 165580141, 267914296, 433494437,
@@ -465,7 +452,7 @@ public class Kyu5 {
         return null;
     }
 
-    public static String listSquared2(long m, long n) {
+    static String listSquared2(long m, long n) {
 
         long[] dig = new long[]{1	,
                 42	,                246	,                287	,                728	,                1434	,
@@ -1418,7 +1405,7 @@ public class Kyu5 {
         return r;
     }
 
-    public static double going(int n) {
+    static double going(int n) {
         BigInteger factorial = IntStream.rangeClosed(2, n).parallel().mapToObj(BigInteger::valueOf).reduce(BigInteger::multiply).get();
         Double factD = factorial.doubleValue();
 
@@ -1441,7 +1428,7 @@ public class Kyu5 {
         return Math.floor(resD * 1000000)/1000000.0;
     }
 
-    public static int greedy(int[] dice){
+    static int greedy(int[] dice){
         int res = 0;
         int[] count = new int[]{0, 0, 0, 0, 0, 0};
         int[] weight = new int[]{100, 0, 0, 0, 50, 0};
@@ -1454,23 +1441,7 @@ public class Kyu5 {
         return res;
     }
 
-    public static int[] sameFactRev(int nMax) {
-        List<Integer> integers = new ArrayList<>();
-        int[] factRev = new int[]{1089, 2178, 4356, 6534, 8712, 9801, 10989, 21978, 24024,
-                26208, 42042, 43956, 48048, 61248, 65934, 80262, 84084,
-                84216, 87912, 98901, 109989, 219978, 231504, 234234,
-                242424, 253344, 255528, 264264, 272646, 275184, 277816,
-                288288, 405132, 424242, 432432, 439956};
-
-        for (int i : factRev) if (i <= nMax) integers.add(i); else break;
-
-        int[] res = new int[integers.size()];
-        for (int i = 0; i < res.length; i++) res[i] = integers.get(i);
-
-        return res;
-    }
-
-    public static int[][] multiply(int[][] a, int[][] b) {
+    static int[][] multiply(int[][] a, int[][] b) {
         return a[0].length!= b.length ? null :
                 java.util.Arrays.stream(a).
                         map(r -> java.util.stream.IntStream.range(0, b[0].length).
@@ -1478,7 +1449,7 @@ public class Kyu5 {
                                 toArray()).toArray(int[][]::new);
     }
 
-    public static String change(String s, String prog, String version) {
+    static String change(String s, String prog, String version) {
         Pattern pattern1 = Pattern.compile("^\\+[1]-[0-9]{3}-[0-9]{3}-[0-9]{4}$");
         Pattern pattern2 = Pattern.compile("^[0-9]+.[0-9]+$");
         StringBuilder res = new StringBuilder();

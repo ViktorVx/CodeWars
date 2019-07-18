@@ -327,4 +327,5 @@ public class Kyu5Test {
         System.out.println("Expect: " + exp);
         assertEquals(exp, ans);
     }
+
 }
