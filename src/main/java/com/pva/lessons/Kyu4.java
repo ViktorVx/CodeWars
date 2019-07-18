@@ -28,7 +28,7 @@ public class Kyu4 {
         addNew(treeSet, three, level, totalLevels);
     }
 
-    //********************************
+    //******************************************************************************************************************
 
     public static String mix(String s1, String s2) {
         char[] ch1 = s1.replaceAll("[^a-z]", "").toCharArray();
@@ -74,19 +74,8 @@ public class Kyu4 {
         return res.length() == 0 ? "" : res.substring(0, res.length() - 1);
     }
 
-    //********************************
-    static final String[][] ARR = {
-            {"0", "8"},
-            {"1", "2", "4"},
-            {"1", "2", "3", "5"},
-            {"2", "3", "6"},
-            {"1", "4", "5", "7"},
-            {"2", "4", "5", "6", "8"},
-            {"3", "5", "6", "9"},
-            {"4", "7", "8"},
-            {"0", "5", "7", "8", "9"},
-            {"6", "8", "9"},
-    };
+    //******************************************************************************************************************
+
     public static List<String> getPINs(String observed) {
         if (observed==null || observed.length() == 0) return new ArrayList<>();
         List<String> resList = new ArrayList<>();
@@ -95,6 +84,18 @@ public class Kyu4 {
     }
 
     public static void generatePin(List<String> resList, Integer codeLen, Integer level, String observed, String pin) {
+        String[][] ARR = {
+                {"0", "8"},
+                {"1", "2", "4"},
+                {"1", "2", "3", "5"},
+                {"2", "3", "6"},
+                {"1", "4", "5", "7"},
+                {"2", "4", "5", "6", "8"},
+                {"3", "5", "6", "9"},
+                {"4", "7", "8"},
+                {"0", "5", "7", "8", "9"},
+                {"6", "8", "9"},
+        };
         if (pin.length() == codeLen) {
             resList.add(pin);
             return;
