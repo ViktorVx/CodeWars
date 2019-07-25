@@ -170,4 +170,13 @@ public class Kyu4Test {
         ));
         assertEquals("it should return Red", "Red", Kyu4.whoIsWinner(myList));
     }
+
+    @Test
+    public void SampleTests() {
+        assertEquals("CLOSE_WAIT",   Kyu4.traverseStates(new String[] {"APP_ACTIVE_OPEN","RCV_SYN_ACK","RCV_FIN"}));
+        assertEquals("ESTABLISHED",  Kyu4.traverseStates(new String[] {"APP_PASSIVE_OPEN", "RCV_SYN","RCV_ACK"}));
+        assertEquals("LAST_ACK",     Kyu4.traverseStates(new String[] {"APP_ACTIVE_OPEN","RCV_SYN_ACK","RCV_FIN","APP_CLOSE"}));
+        assertEquals("SYN_SENT",     Kyu4.traverseStates(new String[] {"APP_ACTIVE_OPEN"}));
+        assertEquals("ERROR",        Kyu4.traverseStates(new String[] {"APP_PASSIVE_OPEN","RCV_SYN","RCV_ACK","APP_CLOSE","APP_SEND"}));
+    }
 }

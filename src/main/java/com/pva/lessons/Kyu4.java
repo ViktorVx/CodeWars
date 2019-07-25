@@ -316,6 +316,83 @@ public class Kyu4 {
         System.out.println("-------------");
     }
 
+    public static String traverseStates(String[] events) {
+        final String START_STATE = "CLOSED";
+        final List<String> eventsList = Arrays.asList(
+                "APP_PASSIVE_OPEN",  //00
+                "APP_ACTIVE_OPEN",   //01
+                "APP_SEND",          //02
+                "APP_CLOSE",         //03
+                "APP_TIMEOUT",       //04
+                "RCV_SYN",           //05
+                "RCV_ACK",           //06
+                "RCV_SYN_ACK",       //07
+                "RCV_FIN",           //08
+                "RCV_FIN_ACK"        //09
+        );
+        final List<String> statesList = Arrays.asList(
+                "CLOSED",       //00
+                "LISTEN",       //01
+                "SYN_SENT",     //02
+                "SYN_RCVD",     //03
+                "ESTABLISHED",  //04
+                "CLOSE_WAIT",   //05
+                "LAST_ACK",     //06
+                "FIN_WAIT_1",   //07
+                "FIN_WAIT_2",   //08
+                "CLOSING",      //09
+                "TIME_WAIT"     //10
+        );
+
+
+        /* 00 01 02 03 04 05 06 07 08 09
+        00 01 02 ** ** ** ** ** ** ** **
+        01 ** ** 02 00 ** 03 ** ** ** **
+        02 ** ** ** 00 ** 03 ** 04 ** **
+        03 ** ** ** 07 ** ** 04 ** ** **
+        04 ** ** ** 07 ** ** ** ** 05 **
+        05 ** ** ** 06 ** ** ** ** ** **
+        06 ** ** ** ** ** ** 00 ** ** **
+        07 ** ** ** ** ** ** 08 ** 09 10
+        08 ** ** ** ** ** ** ** ** 10 **
+        09 ** ** ** ** ** ** 10 ** ** **
+        10 ** ** ** ** 00 ** ** ** ** **
+         */
+
+        final int[][] table = {
+            { 1,  2, -1, -1, -1, -1, -1, -1, -1, -1},
+            {-1, -1,  2,  0, -1,  3, -1, -1, -1, -1},
+            {-1, -1, -1,  0, -1,  3, -1,  4, -1, -1},
+            {-1, -1, -1,  7, -1, -1,  4, -1, -1, -1},
+            {-1, -1, -1,  7, -1, -1, -1, -1,  5, -1},
+            {-1, -1, -1,  6, -1, -1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1,  0, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1,  8, -1,  9, 10},
+            {-1, -1, -1, -1, -1, -1, -1, -1, 10, -1},
+            {-1, -1, -1, -1, -1, -1, 10, -1, -1, -1},
+            {-1, -1, -1, -1,  0, -1, -1, -1, -1, -1},
+        };
+
+        String res = START_STATE;
+
+        for (String event : events) {
+            try {
+                res = statesList.get(getNextState(table, statesList.indexOf(res), eventsList.indexOf(event)));
+            } catch (WrongEventException e) {
+                return "ERROR";
+            }
+        }
+
+        return res;
+    }
+
+    private static int getNextState(int[][] table, int stateIndex, int eventIndex) throws WrongEventException {
+        if (table[stateIndex][eventIndex] == -1) throw new WrongEventException();
+        return table[stateIndex][eventIndex];
+    }
+
     //******************************************************************************************************************
 
 }
+
+class WrongEventException extends Exception {}
