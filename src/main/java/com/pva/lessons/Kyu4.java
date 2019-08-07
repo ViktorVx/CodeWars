@@ -391,8 +391,62 @@ public class Kyu4 {
         return table[stateIndex][eventIndex];
     }
 
+    static class WrongEventException extends Exception {}
+
     //******************************************************************************************************************
 
+    static Map<String, Integer> numMap = new HashMap<>(){
+        {
+            put("zero", 0); put("one", 1); put("two", 2); put("three", 3); put("four", 4); put("five", 5);
+            put("six", 6); put("seven", 7); put("eight", 8); put("nine", 9);
+            put("ten", 10); put("eleven", 11); put("twelve", 12); put("thirteen", 13); put("fourteen", 14);
+            put("fifteen", 15); put("sixteen", 16); put("seventeen", 17); put("eighteen", 18);
+            put("nineteen", 19); put("twenty", 20); put("thirty", 30); put("forty", 40); put("fifty", 50);
+            put("sixty", 60); put("seventy", 70); put("eighty", 80); put("ninety", 90);
+        }
+    };
+
+    public static int parseInt(String numStr) {
+        if (numStr.contains("million")) return 1000000;
+        int res = 0;
+        if (numStr.contains("thousand")) {
+            String[] parts = numStr.split("thousand");
+            res += parseHundreds(parts[0].trim()) * 1000;
+            if (parts.length == 2)
+                res += parseHundreds(parts[1].replaceAll("and", "").trim());
+        } else {
+            res += parseHundreds(numStr);
+        }
+        return res;
+    }
+
+    public static int parseHundreds(String numStr) {
+        int res = 0;
+        if (numStr.contains("hundred")) {
+            String[] parts = numStr.split("hundred");
+            res+= numMap.get(parts[0].trim().toLowerCase()) * 100;
+            if (parts.length == 2)
+                res+=parseTens(parts[1].replaceAll("and", "").trim());
+        } else {
+            res += parseTens(numStr);
+        }
+        return res;
+    }
+
+    public static int parseTens(String numStr) {
+        int res = 0;
+        if (numStr.contains("-")) {
+            String[] parts = numStr.split("-");
+            res+= numMap.get(parts[0]);
+            if (parts.length == 2)
+                res+= numMap.get(parts[1]);
+        } else {
+            res += numMap.get(numStr);
+        }
+        return res;
+    }
+
+    //******************************************************************************************************************
 }
 
-class WrongEventException extends Exception {}
+
