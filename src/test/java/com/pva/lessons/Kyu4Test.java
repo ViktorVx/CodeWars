@@ -182,14 +182,14 @@ public class Kyu4Test {
 
     @Test
     public void fixedTests() {
-//        assertEquals(1 , Kyu4.parseInt("one"));
-//        assertEquals(20 , Kyu4.parseInt("twenty"));
-//        assertEquals(246 , Kyu4.parseInt("two hundred forty-six"));
-//        assertEquals(783919 , Kyu4.parseInt("seven hundred eighty-three thousand nine hundred and nineteen"));
-//        assertEquals(28 , Kyu4.parseInt("twenty-eight"));
-//        assertEquals(198 , Kyu4.parseInt("one hundred and ninety-eight"));
-//        assertEquals(100 , Kyu4.parseInt("one hundred"));
-//        assertEquals(2000 , Kyu4.parseInt("two thousand"));
+        assertEquals(1 , Kyu4.parseInt("one"));
+        assertEquals(20 , Kyu4.parseInt("twenty"));
+        assertEquals(246 , Kyu4.parseInt("two hundred forty-six"));
+        assertEquals(783919 , Kyu4.parseInt("seven hundred eighty-three thousand nine hundred and nineteen"));
+        assertEquals(28 , Kyu4.parseInt("twenty-eight"));
+        assertEquals(198 , Kyu4.parseInt("one hundred and ninety-eight"));
+        assertEquals(100 , Kyu4.parseInt("one hundred"));
+        assertEquals(2000 , Kyu4.parseInt("two thousand"));
         assertEquals(200003 , Kyu4.parseInt("two hundred thousand and three"));
     }
 
