@@ -9,8 +9,8 @@ public class Kyu1Test {
 
     @Test
     public void guessSecurityCode() throws IOException {
-        System.out.println("+++");
-        Kyu1.guessSecurityCode("43");
+//        System.out.println("+++");
+//        Kyu1.guessSecurityCode("43");
     }
 
     @Test
