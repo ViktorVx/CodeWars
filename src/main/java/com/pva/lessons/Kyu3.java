@@ -7,6 +7,7 @@ import net.bytebuddy.implementation.FixedValue;
 
 import java.math.BigInteger;
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 import static net.bytebuddy.matcher.ElementMatchers.named;
 
@@ -142,6 +143,26 @@ class Kyu3 {
                 .make()
                 .load(Kyu3.class.getClassLoader(), ClassReloadingStrategy.fromInstalledAgent());
         return new Double(1.0);
+    }
+
+    //*** Prime Streaming (PG-13) **************************************************************************************
+
+    public static IntStream stream() {
+        return IntStream.iterate(2, i -> ++i).filter(i -> isPrime(i));
+    }
+
+    public static boolean isPrime(int n) {
+
+        if (n > 2 && n % 2 == 0){
+            return false;
+        }
+        int top = (int) Math.sqrt(n) + 1;
+        for (int i=3; i < top; i+= 2){
+            if (n % i==0){
+                return false;
+            }
+        }
+        return true;
     }
 
 }
