@@ -165,4 +165,63 @@ class Kyu3 {
         return true;
     }
 
+    //*** Prime Streaming (PG-17) **************************************************************************************
+
+    private static final int N = 1_000_000_000;
+
+    public static IntStream streamBig() {
+        return eratosthenesSieve(N);
+    }
+
+//    private static IntStream eratosthenesSieve(int n) {
+//        BitSet b = new BitSet(n + 1);
+//        b.flip(0, b.size() - 1);
+//        b.clear(0);
+//        b.clear(1);
+//        int i = 2;
+//        while (i * i <= n) {
+//            if (b.get(i)) {
+//                int k = i * i;
+//                while (k <= n) {
+//                    b.clear(k);
+//                    k = k + i;
+//                }
+//            }
+//            i++;
+//        }
+//        return b.stream();
+//    }
+
+//    private static final long MAX = 1000000000L;
+    private static final long MAX = 1_000_000_000;
+    private static final long SQRT_MAX = (long) Math.sqrt(MAX) + 1;
+    private static final int MEMORY_SIZE = (int) (MAX >> 4);
+    private static byte[] array = new byte[MEMORY_SIZE];
+
+    public static boolean getBit(long i) {
+        byte block = array[(int) (i >> 4)];
+        byte mask = (byte) (1 << ((i >> 1) & 7));
+        return ((block & mask) != 0);
+    }
+
+    public static void setBit(long i) {
+        int index = (int) (i >> 4);
+        byte block = array[index];
+        byte mask = (byte) (1 << ((i >> 1) & 7));
+        array[index] = (byte) (block | mask);
+    }
+
+    private static IntStream eratosthenesSieve(int n) {
+        for (long i = 3; i < SQRT_MAX; i += 2) {
+            if (!getBit(i)) {
+                long j = (i * i);
+                while (j < MAX) {
+                    setBit(j);
+                    j += (2 * i);
+                }
+            }
+        }
+        return null;
+    }
+
 }
