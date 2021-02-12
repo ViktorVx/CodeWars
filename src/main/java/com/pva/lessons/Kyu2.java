@@ -1,5 +1,8 @@
 package com.pva.lessons;
 
+import jdk.jshell.JShell;
+
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -180,5 +183,14 @@ public class Kyu2 {
     }
 
     //******************************************************************************************************************
+
+    /**
+     * Challenge Fun #10: Integer Square Root
+     * @param n
+     * @return
+     */
+    public static String integerSquareRoot(String n) {
+        // \u000d \u0072\u0065\u0074\u0075\u0072\u006e \u006e\u0065\u0077 \u0042\u0069\u0067\u0049\u006e\u0074\u0065\u0067\u0065\u0072\u0028\u006e\u0029\u002e\u0073\u0071\u0072\u0074\u0028\u0029\u002e\u0074\u006f\u0053\u0074\u0072\u0069\u006e\u0067\u0028\u0029\u003b
+    }
 
 }
