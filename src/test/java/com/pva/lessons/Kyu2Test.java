@@ -2,6 +2,8 @@ package com.pva.lessons;
 
 import org.junit.Test;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.regex.Pattern;
 
 import static org.junit.Assert.assertEquals;
@@ -23,7 +25,7 @@ public class Kyu2Test {
     }
 
     @Test
-    public void basicTests() {
+    public void basicTests() throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException {
 
         assertEquals("1", Kyu2.integerSquareRoot("1"));
         assertEquals("2", Kyu2.integerSquareRoot("5"));

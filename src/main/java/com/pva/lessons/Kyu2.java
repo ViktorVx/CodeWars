@@ -1,12 +1,11 @@
 package com.pva.lessons;
 
-import jdk.jshell.JShell;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.tools.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.URI;
+import java.util.*;
 
 public class Kyu2 {
 
@@ -189,8 +188,105 @@ public class Kyu2 {
      * @param n
      * @return
      */
-    public static String integerSquareRoot(String n) {
-        // \u000d \u0072\u0065\u0074\u0075\u0072\u006e \u006e\u0065\u0077 \u0042\u0069\u0067\u0049\u006e\u0074\u0065\u0067\u0065\u0072\u0028\u006e\u0029\u002e\u0073\u0071\u0072\u0074\u0028\u0029\u002e\u0074\u006f\u0053\u0074\u0072\u0069\u006e\u0067\u0028\u0029\u003b
+    public static String integerSquareRoot(String n) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException {
+
+        String className = "MySqrt";
+        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+        DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<>();
+        final JavaByteObject byteObject = new JavaByteObject(className);
+        StandardJavaFileManager standardFileManager = compiler.getStandardFileManager(diagnostics, null, null);
+        JavaFileManager fileManager = createFileManager(standardFileManager, byteObject);
+        JavaCompiler.CompilationTask task = compiler.getTask(null,
+                fileManager, diagnostics, null, null, getCompilationUnits(className));
+
+        if (!task.call()) {
+            diagnostics.getDiagnostics().forEach(System.out::println);
+        }
+        fileManager.close();
+
+        //loading and using our compiled class
+        final ClassLoader inMemoryClassLoader = createClassLoader(byteObject);
+        Class<DoStuff> test = (Class<DoStuff>) inMemoryClassLoader.loadClass(className);
+        DoStuff iTest = test.newInstance();
+        return iTest.doStuff(n);
     }
 
+    public static String getSource() {
+        return
+                "\n" +
+                "import java.math.BigInteger;\n" +
+                "\n" +
+                "public class MySqrt implements com.pva.lessons.Kyu2.DoStuff {\n" +
+                "    @Override \n" +
+                "    public String doStuff(String n) {\n" +
+                "        return new BigInteger(n).sqrt().toString();\n" +
+                "    }\n" +
+                "}";
+    }
+
+    public static Iterable<? extends JavaFileObject> getCompilationUnits(String className) {
+        JavaStringObject stringObject = new JavaStringObject(className, getSource());
+        return Arrays.asList(stringObject);
+    }
+
+    private static JavaFileManager createFileManager(StandardJavaFileManager fileManager,
+                                                     JavaByteObject byteObject) {
+        return new ForwardingJavaFileManager<>(fileManager) {
+            @Override
+            public JavaFileObject getJavaFileForOutput(Location location,
+                                                       String className, JavaFileObject.Kind kind,
+                                                       FileObject sibling) {
+                return byteObject;
+            }
+        };
+    }
+
+    private static ClassLoader createClassLoader(final JavaByteObject byteObject) {
+        return new ClassLoader() {
+            @Override
+            public Class<?> findClass(String name) {
+                byte[] bytes = byteObject.getBytes();
+                return defineClass(name, bytes, 0, bytes.length);
+            }
+        };
+    }
+
+    public interface DoStuff {
+        String doStuff(String n);
+    }
+
+
+}
+
+class JavaByteObject extends SimpleJavaFileObject {
+    private ByteArrayOutputStream outputStream;
+
+    protected JavaByteObject(String name) {
+        super(URI.create("bytes:///" + name + name.replaceAll("\\.", "/")), Kind.CLASS);
+        outputStream = new ByteArrayOutputStream();
+    }
+
+    @Override
+    public OutputStream openOutputStream() throws IOException {
+        return outputStream;
+    }
+
+    public byte[] getBytes() {
+        return outputStream.toByteArray();
+    }
+}
+
+class JavaStringObject extends SimpleJavaFileObject {
+    private final String source;
+
+    protected JavaStringObject(String name, String source) {
+        super(URI.create("string:///" + name.replaceAll("\\.", "/") +
+                Kind.SOURCE.extension), Kind.SOURCE);
+        this.source = source;
+    }
+
+    @Override
+    public CharSequence getCharContent(boolean ignoreEncodingErrors) {
+        return source;
+    }
 }
