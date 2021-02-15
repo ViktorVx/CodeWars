@@ -188,8 +188,7 @@ public class Kyu2 {
      * @param n
      * @return
      */
-    public static String integerSquareRoot(String n) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException {
-
+    public static String integerSquareRoot(String n) {
         String className = "MySqrt";
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<>();
@@ -197,21 +196,20 @@ public class Kyu2 {
         StandardJavaFileManager standardFileManager = compiler.getStandardFileManager(diagnostics, null, null);
         JavaFileManager fileManager = createFileManager(standardFileManager, byteObject);
         JavaCompiler.CompilationTask task = compiler.getTask(null,
-                fileManager, diagnostics, null, null, getCompilationUnits(className));
-
-        if (!task.call()) {
-            diagnostics.getDiagnostics().forEach(System.out::println);
+                fileManager, diagnostics, null, null, getCompilationUnits(className, "SECRET"));
+        task.call();
+        try {
+            fileManager.close();
+            final ClassLoader inMemoryClassLoader = createClassLoader(byteObject);
+            Class<DoStuff> test = (Class<DoStuff>) inMemoryClassLoader.loadClass(className);
+            DoStuff iTest = test.newInstance();
+            return iTest.doStuff(n);
+        } catch (Exception e) {
+            return null;
         }
-        fileManager.close();
-
-        //loading and using our compiled class
-        final ClassLoader inMemoryClassLoader = createClassLoader(byteObject);
-        Class<DoStuff> test = (Class<DoStuff>) inMemoryClassLoader.loadClass(className);
-        DoStuff iTest = test.newInstance();
-        return iTest.doStuff(n);
     }
 
-    public static String getSource() {
+    public static String getSource(String password) {
         return
                 "\n" +
                 "import java.math.BigInteger;\n" +
@@ -224,8 +222,8 @@ public class Kyu2 {
                 "}";
     }
 
-    public static Iterable<? extends JavaFileObject> getCompilationUnits(String className) {
-        JavaStringObject stringObject = new JavaStringObject(className, getSource());
+    public static Iterable<? extends JavaFileObject> getCompilationUnits(String className, String password) {
+        JavaStringObject stringObject = new JavaStringObject(className, getSource(password));
         return Arrays.asList(stringObject);
     }
 

@@ -25,7 +25,7 @@ public class Kyu2Test {
     }
 
     @Test
-    public void basicTests() throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException {
+    public void basicTests() {
 
         assertEquals("1", Kyu2.integerSquareRoot("1"));
         assertEquals("2", Kyu2.integerSquareRoot("5"));
