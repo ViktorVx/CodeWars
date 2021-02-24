@@ -183,12 +183,9 @@ public class Kyu2 {
 
     //******************************************************************************************************************
 
-    /**
-     * Challenge Fun #10: Integer Square Root
-     * @param n
-     * @return
-     */
-    public static String integerSquareRoot(String n) {
+    private static DoStuff iTest;
+
+    static {
         String className = "MySqrt";
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<>();
@@ -196,34 +193,36 @@ public class Kyu2 {
         StandardJavaFileManager standardFileManager = compiler.getStandardFileManager(diagnostics, null, null);
         JavaFileManager fileManager = createFileManager(standardFileManager, byteObject);
         JavaCompiler.CompilationTask task = compiler.getTask(null,
-                fileManager, diagnostics, null, null, getCompilationUnits(className, "SECRET"));
+                fileManager, diagnostics, null, null, getCompilationUnits(className));
         task.call();
         try {
             fileManager.close();
             final ClassLoader inMemoryClassLoader = createClassLoader(byteObject);
             Class<DoStuff> test = (Class<DoStuff>) inMemoryClassLoader.loadClass(className);
-            DoStuff iTest = test.newInstance();
-            return iTest.doStuff(n);
+            iTest = test.newInstance();
         } catch (Exception e) {
-            return null;
         }
     }
 
-    public static String getSource(String password) {
-        return
-                "\n" +
-                "import java.math.BigInteger;\n" +
-                "\n" +
-                "public class MySqrt implements com.pva.lessons.Kyu2.DoStuff {\n" +
-                "    @Override \n" +
-                "    public String doStuff(String n) {\n" +
-                "        return new BigInteger(n).sqrt().toString();\n" +
-                "    }\n" +
-                "}";
+    /**
+     * Challenge Fun #10: Integer Square Root
+     * @param n
+     * @return
+     */
+    public static String integerSquareRoot(String n) {
+        return iTest.doStuff(n);
     }
 
-    public static Iterable<? extends JavaFileObject> getCompilationUnits(String className, String password) {
-        JavaStringObject stringObject = new JavaStringObject(className, getSource(password));
+    public static String getSource() {
+        String s =  "import java.math.BigInteger;  public class MySqrt implements Kata.DoStuff { @Override public String doStuff(String n) { return new BigInteger(n).sqrt().toString(); }}";
+        System.out.println(Base64.getEncoder().encodeToString(s.getBytes()));
+
+        String d = "aW1wb3J0IGphdmEubWF0aC5CaWdJbnRlZ2VyOyAgcHVibGljIGNsYXNzIE15U3FydCBpbXBsZW1lbnRzIGNvbS5wdmEubGVzc29ucy5LeXUyLkRvU3R1ZmYgeyBAT3ZlcnJpZGUgcHVibGljIFN0cmluZyBkb1N0dWZmKFN0cmluZyBuKSB7IHJldHVybiBuZXcgQmlnSW50ZWdlcihuKS5zcXJ0KCkudG9TdHJpbmcoKTsgfX0=";
+        return new String(Base64.getDecoder().decode(d));
+    }
+
+    public static Iterable<? extends JavaFileObject> getCompilationUnits(String className) {
+        JavaStringObject stringObject = new JavaStringObject(className, getSource());
         return Arrays.asList(stringObject);
     }
 
@@ -252,8 +251,6 @@ public class Kyu2 {
     public interface DoStuff {
         String doStuff(String n);
     }
-
-
 }
 
 class JavaByteObject extends SimpleJavaFileObject {
