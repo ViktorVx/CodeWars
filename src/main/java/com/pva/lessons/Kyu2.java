@@ -1,9 +1,11 @@
 package com.pva.lessons;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.tools.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.URI;
+import java.util.*;
 
 public class Kyu2 {
 
@@ -181,4 +183,105 @@ public class Kyu2 {
 
     //******************************************************************************************************************
 
+    private static DoStuff iTest;
+
+    static {
+        String className = "MySqrt";
+        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+        DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<>();
+        final JavaByteObject byteObject = new JavaByteObject(className);
+        StandardJavaFileManager standardFileManager = compiler.getStandardFileManager(diagnostics, null, null);
+        JavaFileManager fileManager = createFileManager(standardFileManager, byteObject);
+        JavaCompiler.CompilationTask task = compiler.getTask(null,
+                fileManager, diagnostics, null, null, getCompilationUnits(className));
+        task.call();
+        try {
+            fileManager.close();
+            final ClassLoader inMemoryClassLoader = createClassLoader(byteObject);
+            Class<DoStuff> test = (Class<DoStuff>) inMemoryClassLoader.loadClass(className);
+            iTest = test.newInstance();
+        } catch (Exception e) {
+        }
+    }
+
+    /**
+     * Challenge Fun #10: Integer Square Root
+     * @param n
+     * @return
+     */
+    public static String integerSquareRoot(String n) {
+        return iTest.doStuff(n);
+    }
+
+    public static String getSource() {
+        String s =  "import java.math.BigInteger;  public class MySqrt implements Kata.DoStuff { @Override public String doStuff(String n) { return new BigInteger(n).sqrt().toString(); }}";
+        System.out.println(Base64.getEncoder().encodeToString(s.getBytes()));
+
+        String d = "aW1wb3J0IGphdmEubWF0aC5CaWdJbnRlZ2VyOyAgcHVibGljIGNsYXNzIE15U3FydCBpbXBsZW1lbnRzIGNvbS5wdmEubGVzc29ucy5LeXUyLkRvU3R1ZmYgeyBAT3ZlcnJpZGUgcHVibGljIFN0cmluZyBkb1N0dWZmKFN0cmluZyBuKSB7IHJldHVybiBuZXcgQmlnSW50ZWdlcihuKS5zcXJ0KCkudG9TdHJpbmcoKTsgfX0=";
+        return new String(Base64.getDecoder().decode(d));
+    }
+
+    public static Iterable<? extends JavaFileObject> getCompilationUnits(String className) {
+        JavaStringObject stringObject = new JavaStringObject(className, getSource());
+        return Arrays.asList(stringObject);
+    }
+
+    private static JavaFileManager createFileManager(StandardJavaFileManager fileManager,
+                                                     JavaByteObject byteObject) {
+        return new ForwardingJavaFileManager<>(fileManager) {
+            @Override
+            public JavaFileObject getJavaFileForOutput(Location location,
+                                                       String className, JavaFileObject.Kind kind,
+                                                       FileObject sibling) {
+                return byteObject;
+            }
+        };
+    }
+
+    private static ClassLoader createClassLoader(final JavaByteObject byteObject) {
+        return new ClassLoader() {
+            @Override
+            public Class<?> findClass(String name) {
+                byte[] bytes = byteObject.getBytes();
+                return defineClass(name, bytes, 0, bytes.length);
+            }
+        };
+    }
+
+    public interface DoStuff {
+        String doStuff(String n);
+    }
+}
+
+class JavaByteObject extends SimpleJavaFileObject {
+    private ByteArrayOutputStream outputStream;
+
+    protected JavaByteObject(String name) {
+        super(URI.create("bytes:///" + name + name.replaceAll("\\.", "/")), Kind.CLASS);
+        outputStream = new ByteArrayOutputStream();
+    }
+
+    @Override
+    public OutputStream openOutputStream() throws IOException {
+        return outputStream;
+    }
+
+    public byte[] getBytes() {
+        return outputStream.toByteArray();
+    }
+}
+
+class JavaStringObject extends SimpleJavaFileObject {
+    private final String source;
+
+    protected JavaStringObject(String name, String source) {
+        super(URI.create("string:///" + name.replaceAll("\\.", "/") +
+                Kind.SOURCE.extension), Kind.SOURCE);
+        this.source = source;
+    }
+
+    @Override
+    public CharSequence getCharContent(boolean ignoreEncodingErrors) {
+        return source;
+    }
 }
