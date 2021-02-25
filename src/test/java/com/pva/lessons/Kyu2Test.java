@@ -38,4 +38,17 @@ public class Kyu2Test {
                 Kyu2.integerSquareRoot("12323309809809534545458098709854808654685688665486860956865654654654324238000980980980"));
 
     }
+
+    @Test
+    public void testAddition() {
+        assertEquals(Kyu2.calculate("1+1"), 2d, 0.01);
+        assertEquals(Kyu2.calculate("1 - 1"), 0d, 0.01);
+        assertEquals(Kyu2.calculate("1* 1"), 1d, 0.01);
+        assertEquals(Kyu2.calculate("1 /1"), 1d, 0.01);
+        assertEquals(Kyu2.calculate("-123"), -123d, 0.01);
+        assertEquals(Kyu2.calculate("123"), 123d, 0.01);
+        assertEquals(Kyu2.calculate("2 /2+3 * 4.75- -6"), 21.25, 0.01);
+        assertEquals(Kyu2.calculate("12* 123"), 1476d, 0.01);
+        assertEquals(Kyu2.calculate("2 / (2 + 3) * 4.33 - -6"), 7.732, 0.01);
+    }
 }

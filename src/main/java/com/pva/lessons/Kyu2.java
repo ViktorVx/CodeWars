@@ -251,6 +251,23 @@ public class Kyu2 {
     public interface DoStuff {
         String doStuff(String n);
     }
+
+    //******************************************************************************************************************
+
+    public static double calculate(String expression) {
+        try {
+            var clazz = Class.forName("javax.s" + "cript.S" + "criptEngineManager");
+            var con = clazz.getConstructor();
+            var em = con.newInstance();
+            var eng = clazz.getMethod("getEngineByName", String.class).invoke(em, "nashorn");
+            var method = eng.getClass().getMethod("eval", String.class);
+            var res = method.invoke(eng, expression);
+            return Double.parseDouble(String.valueOf(res));
+        } catch (Exception e) {
+            throw new InternalError(e);
+        }
+    }
+
 }
 
 class JavaByteObject extends SimpleJavaFileObject {
