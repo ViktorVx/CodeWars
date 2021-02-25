@@ -51,4 +51,15 @@ public class Kyu2Test {
         assertEquals(Kyu2.calculate("12* 123"), 1476d, 0.01);
         assertEquals(Kyu2.calculate("2 / (2 + 3) * 4.33 - -6"), 7.732, 0.01);
     }
+
+    @Test
+    public void examples() {
+        assertEquals('B', Kyu2.triangle("B"));
+        assertEquals('R', Kyu2.triangle("GB"));
+        assertEquals('R', Kyu2.triangle("RRR"));
+        assertEquals('B', Kyu2.triangle("RGBG"));
+        assertEquals('G', Kyu2.triangle("RBRGBRB"));
+        assertEquals('G', Kyu2.triangle("RBRGBRBGGRRRBGBBBGG"));
+
+    }
 }

@@ -268,7 +268,51 @@ public class Kyu2 {
         }
     }
 
+    //******************************************************************************************************************
+
+    /**
+     * <a>https://www.codewars.com/kata/5a331ea7ee1aae8f24000175/train/java</a>
+     * @param row
+     * @return
+     */
+    public static char triangle(final String row) {
+        Set<String> combinations = generate(new HashSet<>(), startString(2));
+        System.out.println(combinations);
+        System.out.println("*********");
+        // Return the answer
+        return '?';
+    }
+
+    private static char[] startString(Integer len) {
+        char[] res = new char[len];
+        for (int i = 0; i < len; i++) {
+            res[i] = 'B';
+        }
+        return res;
+    }
+
+    private static Set<String> generate(Set<String> res, char[] prev) {
+        res.add(String.valueOf(prev));
+        for (int i = prev.length - 1; i >= 0; i--) {
+            if (prev[i] == 'R') continue;
+            if (prev[i] == 'B') {
+                prev[i] = 'G';
+                generate(res, prev);
+                continue;
+            }
+            if (prev[i] == 'G') {
+                prev[i] = 'R';
+                generate(res, prev);
+                continue;
+            }
+
+        }
+        return res;
+    }
+
 }
+
+//**********************************************************************************************************************
 
 class JavaByteObject extends SimpleJavaFileObject {
     private ByteArrayOutputStream outputStream;
