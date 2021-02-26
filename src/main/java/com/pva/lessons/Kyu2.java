@@ -269,6 +269,20 @@ public class Kyu2 {
     }
 
     //******************************************************************************************************************
+    static Map<String, String> map;
+    static Integer MAX_MASK_LEN = 10;
+    static {
+        map = prepareMap();
+        for (int i = 3; i <= MAX_MASK_LEN; i++) {
+            Set<String> combinations = generate(i);
+            for (String s : combinations) {
+                String hash = map.get(
+                        map.get(s.substring(0, s.length() - 1)).concat(map.get(s.substring(1)))
+                );
+                map.put(s, hash);
+            }
+        }
+    }
 
     /**
      * <a>https://www.codewars.com/kata/5a331ea7ee1aae8f24000175/train/java</a>
@@ -276,23 +290,17 @@ public class Kyu2 {
      * @return
      */
     public static char triangle(final String row) {
-        Integer MAX_MASK_LEN = 10;
-        Map<String, String> map = prepareMap();
-        for (int i = 3; i <= MAX_MASK_LEN; i++) {
-            Set<String> combinations = generate(i);
-            for (String s : combinations) {
-                String hash = map.get(
-                    map.get(s.substring(0, s.length() - 1)).concat(map.get(s.substring(1)))
-                );
-                map.put(s, hash);
+        System.out.println(row);
+        String res = row;
+        while (res.length() != 1) {
+            if (res.length() <= MAX_MASK_LEN) return map.get(res).charAt(0);
+            String r = "";
+            for (int i = 0; i < res.length() - MAX_MASK_LEN; i++) {
+                r = r.concat(map.get(res.substring(i, i + MAX_MASK_LEN)));
             }
+            res = r;
         }
-        System.out.println("*********");
-        System.out.println(map);
-        System.out.println(map.size());
-        System.out.println("*********");
-        // Return the answer
-        return '?';
+        return res.charAt(0);
     }
 
     private static Map<String, String> prepareMap() {
