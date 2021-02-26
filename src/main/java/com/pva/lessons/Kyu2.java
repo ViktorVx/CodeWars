@@ -276,16 +276,40 @@ public class Kyu2 {
      * @return
      */
     public static char triangle(final String row) {
-        Integer MAX_MASK_LEN = 3;
-        Set<String> combinations = new HashSet<>();
-        for (int i = 1; i <= MAX_MASK_LEN; i++) {
-            combinations.addAll(generate(combinations, startString(i)));
+        Integer MAX_MASK_LEN = 10;
+        Map<String, String> map = prepareMap();
+        for (int i = 3; i <= MAX_MASK_LEN; i++) {
+            Set<String> combinations = generate(i);
+            for (String s : combinations) {
+                String hash = map.get(
+                    map.get(s.substring(0, s.length() - 1)).concat(map.get(s.substring(1)))
+                );
+                map.put(s, hash);
+            }
         }
-        System.out.println(combinations);
         System.out.println("*********");
-        System.out.println(combinations.size());
+        System.out.println(map);
+        System.out.println(map.size());
+        System.out.println("*********");
         // Return the answer
         return '?';
+    }
+
+    private static Map<String, String> prepareMap() {
+        Map<String, String> map = new HashMap<>();
+        map.put("B", "B");
+        map.put("G", "G");
+        map.put("R", "R");
+        map.put("BB", "B");
+        map.put("BG", "R");
+        map.put("BR", "G");
+        map.put("GB", "R");
+        map.put("GG", "G");
+        map.put("GR", "B");
+        map.put("RB", "G");
+        map.put("RG", "B");
+        map.put("RR", "R");
+        return map;
     }
 
     private static char[] startString(Integer len) {
@@ -296,7 +320,9 @@ public class Kyu2 {
         return res;
     }
 
-    private static Set<String> generate(Set<String> res, char[] prev) {
+    private static Set<String> generate(Integer len) {
+        char[] prev = startString(len);
+        Set<String> res = new HashSet<>();
         for (int i = prev.length - 1; i >= 0; i--) {
             res.add(String.valueOf(prev));
             if (prev[i] == 'R') {
@@ -308,7 +334,6 @@ public class Kyu2 {
                     prev[j] = 'B';
                 }
                 i = prev.length;
-//                generate(res, prev);
                 continue;
             }
             if (prev[i] == 'G') {
@@ -317,10 +342,8 @@ public class Kyu2 {
                     prev[j] = 'B';
                 }
                 i = prev.length;
-//                generate(res, prev);
                 continue;
             }
-
         }
         return res;
     }
