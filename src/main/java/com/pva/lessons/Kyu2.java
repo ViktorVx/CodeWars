@@ -276,9 +276,14 @@ public class Kyu2 {
      * @return
      */
     public static char triangle(final String row) {
-        Set<String> combinations = generate(new HashSet<>(), startString(2));
+        Integer MAX_MASK_LEN = 3;
+        Set<String> combinations = new HashSet<>();
+        for (int i = 1; i <= MAX_MASK_LEN; i++) {
+            combinations.addAll(generate(combinations, startString(i)));
+        }
         System.out.println(combinations);
         System.out.println("*********");
+        System.out.println(combinations.size());
         // Return the answer
         return '?';
     }
@@ -292,17 +297,27 @@ public class Kyu2 {
     }
 
     private static Set<String> generate(Set<String> res, char[] prev) {
-        res.add(String.valueOf(prev));
         for (int i = prev.length - 1; i >= 0; i--) {
-            if (prev[i] == 'R') continue;
+            res.add(String.valueOf(prev));
+            if (prev[i] == 'R') {
+                continue;
+            }
             if (prev[i] == 'B') {
                 prev[i] = 'G';
-                generate(res, prev);
+                for (int j = i + 1; j < prev.length; j++) {
+                    prev[j] = 'B';
+                }
+                i = prev.length;
+//                generate(res, prev);
                 continue;
             }
             if (prev[i] == 'G') {
                 prev[i] = 'R';
-                generate(res, prev);
+                for (int j = i + 1; j < prev.length; j++) {
+                    prev[j] = 'B';
+                }
+                i = prev.length;
+//                generate(res, prev);
                 continue;
             }
 
