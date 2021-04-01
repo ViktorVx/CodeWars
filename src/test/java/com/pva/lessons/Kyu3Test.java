@@ -153,4 +153,11 @@ public class Kyu3Test {
         assertArrayEquals(expect, found);
     }
 
+    //******************************************************************************************************************
+
+    @Test
+    public void solveAlphameticsTest() {
+        assertEquals("9567 + 1085 = 10652", Kyu3.solveAlphametics("SEND + MORE = MONEY"));
+    }
+
 }

@@ -6,7 +6,8 @@ import net.bytebuddy.dynamic.loading.ClassReloadingStrategy;
 import net.bytebuddy.implementation.FixedValue;
 
 import java.math.BigInteger;
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static net.bytebuddy.matcher.ElementMatchers.named;
@@ -223,5 +224,113 @@ class Kyu3 {
         }
         return null;
     }
+    // *****************************************************************************************************************
+    static List<Integer[]> permutations = new ArrayList<>();
+    static {
+        printAllRecursive(10, new Integer[]{0,1,2,3,4,5,6,7,8,9}, permutations);
+    }
+
+    public static String solveAlphametics(String s) {
+        String result = s.split("=")[1].trim();
+
+        List<String> elems = Arrays.stream(s.split("=")[0].split("\\+")).map(String::trim).collect(Collectors.toList());
+
+
+        Set<String> allUniqueWords = new HashSet<>(elems);
+        allUniqueWords.add(result);
+
+        List<String> allChars = Arrays.stream(s.replaceAll("=|\\s|\\+", "").split(""))
+                .distinct().collect(Collectors.toList());
+        allChars.sort(Comparator.naturalOrder());
+
+        Set<String> notZeros = elems.stream().map(st -> st.substring(0, 1)).collect(Collectors.toSet());
+        List<Integer> notZerosIndexes = notZeros.stream().map(allChars::indexOf).collect(Collectors.toList());
+        List<Integer> elemsLastLettersIndexes = elems.stream()
+                .map(el -> el.substring(el.length() - 1))
+                .map(allChars::indexOf)
+                .collect(Collectors.toList());
+        Integer resLastLetterIndex = allChars.indexOf(result.substring(result.length() - 1));
+
+        Map<String, Integer> charsStat = new HashMap<>();
+        for (String allUniqueWord : allUniqueWords) {
+            for (String ch : allUniqueWord.split("")) {
+                charsStat.putIfAbsent(ch, 0);
+                charsStat.computeIfPresent(ch, (k, v) -> ++v);
+            }
+        }
+        //*****
+//        for (String permutation : permutations) {
+//            var part = permutation.substring(0, allChars.size()).split("");
+////            Map<String, >
+//
+//        }
+
+        //***** Filtering *****
+        System.out.println("All permutations: " + permutations.size());
+
+        List<Integer[]> permZerosFiltered = permutations.stream().filter(elem -> {
+            for (Integer notZerosIndex : notZerosIndexes) {
+                if (elem[notZerosIndex].equals(0))
+                    return false;
+            }
+            return true;
+        }).collect(Collectors.toList());
+        System.out.println("Zero filtered permutations: " + permZerosFiltered.size());
+
+        List<Integer[]> permModFiltered = permZerosFiltered.stream().filter(elem -> {
+            Integer sum = 0;
+            for (Integer elemsLastLettersIndex : elemsLastLettersIndexes) {
+                sum += elem[elemsLastLettersIndex];
+            }
+            return sum % 10 == elem[resLastLetterIndex];
+        }).collect(Collectors.toList());
+        System.out.println("Mod filtered permutations: " + permModFiltered.size());
+
+
+        //***** Statistics *****
+        System.out.println("***** Statistics *****");
+        System.out.println(String.format("Elements: %s", elems.toString()));
+        System.out.println(String.format("Result: %s", result));
+        System.out.println(String.format("Unique words: %s", allUniqueWords));
+        System.out.println(String.format("All chars: %s", allChars));
+        System.out.println(String.format("Not zeros: %s", notZeros));
+        System.out.println(String.format("Not zeros indexes: %s", notZerosIndexes));
+        System.out.println(String.format("Elems Last Letters Indexes: %s", elemsLastLettersIndexes));
+        System.out.println(String.format("Result Last Letter Index: %s", resLastLetterIndex));
+        System.out.println(String.format("Char stats: %s", charsStat));
+        return null;
+    }
+
+    public static void printAllRecursive(
+            int n, Integer[] elements, List<Integer[]> permutations) {
+
+        if(n == 1) {
+            printArray(elements, permutations);
+        } else {
+            for(int i = 0; i < n-1; i++) {
+                printAllRecursive(n - 1, elements, permutations);
+                if(n % 2 == 0) {
+                    swap(elements, i, n-1);
+                } else {
+                    swap(elements, 0, n-1);
+                }
+            }
+            printAllRecursive(n - 1, elements, permutations);
+        }
+    }
+
+    private static void swap(Integer[] input, int a, int b) {
+        Integer tmp = input[a];
+        input[a] = input[b];
+        input[b] = tmp;
+    }
+
+    private static void printArray(Integer[] input, List<Integer[]> permutations) {
+//        for(int i = 0; i < input.length; i++) {
+//            permutations.add(input[i]);
+//        }
+        permutations.add(input.clone());
+    }
+
 
 }
