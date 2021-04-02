@@ -249,7 +249,12 @@ class Kyu3 {
                 .map(el -> el.substring(el.length() - 1))
                 .map(allChars::indexOf)
                 .collect(Collectors.toList());
+        List<Integer> elemsPreLastLettersIndexes = elems.stream()
+                .map(el -> el.substring(el.length() - 2, el.length() - 1))
+                .map(allChars::indexOf)
+                .collect(Collectors.toList());
         Integer resLastLetterIndex = allChars.indexOf(result.substring(result.length() - 1));
+        Integer resPreLastLetterIndex = allChars.indexOf(result.substring(result.length() - 2, result.length() - 1));
 
         Map<String, Integer> charsStat = new HashMap<>();
         for (String allUniqueWord : allUniqueWords) {
@@ -286,6 +291,19 @@ class Kyu3 {
         }).collect(Collectors.toList());
         System.out.println("Mod filtered permutations: " + permModFiltered.size());
 
+        permModFiltered = permModFiltered.stream().filter(elem -> {
+            Integer sum0 = 0;
+            Integer sum1 = 0;
+            for (Integer elemsPreLastLettersIndex : elemsPreLastLettersIndexes) {
+                sum0 += elem[elemsPreLastLettersIndex];
+            }
+            for (Integer elemsLastLettersIndex : elemsLastLettersIndexes) {
+                sum1 += elem[elemsLastLettersIndex];
+            }
+            return ((sum0 % 10) + (sum1 / 10)) % 10 == elem[resPreLastLetterIndex];
+        }).collect(Collectors.toList());
+        System.out.println("Mod (With pre last) filtered permutations: " + permModFiltered.size());
+
 
         //***** Statistics *****
         System.out.println("***** Statistics *****");
@@ -296,7 +314,9 @@ class Kyu3 {
         System.out.println(String.format("Not zeros: %s", notZeros));
         System.out.println(String.format("Not zeros indexes: %s", notZerosIndexes));
         System.out.println(String.format("Elems Last Letters Indexes: %s", elemsLastLettersIndexes));
+        System.out.println(String.format("Elems Pre Last Letters Indexes: %s", elemsPreLastLettersIndexes));
         System.out.println(String.format("Result Last Letter Index: %s", resLastLetterIndex));
+        System.out.println(String.format("Result Pre Last Letter Index: %s", resPreLastLetterIndex));
         System.out.println(String.format("Char stats: %s", charsStat));
         return null;
     }
