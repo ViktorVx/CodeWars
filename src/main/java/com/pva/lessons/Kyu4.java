@@ -6,6 +6,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Kyu4 {
 
@@ -444,6 +445,53 @@ public class Kyu4 {
             res += numMap.get(numStr);
         }
         return res;
+    }
+
+    //******************************************************************************************************************
+
+    public static boolean check(int[][] sudoku) {
+        printMatrix(sudoku);
+        printMatrix(transposeMatrix(sudoku));
+        return checkLines(sudoku) && checkLines(transposeMatrix(sudoku));
+    }
+
+    public static boolean checkLines(int[][] sudoku) {
+        var rowSet = new HashSet<>();
+        var blocks = List.of(new HashSet<Integer>(), new HashSet<Integer>(), new HashSet<Integer>());
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (sudoku[i][j] < 1 || sudoku[i][j] > 9) return false;
+                rowSet.add(sudoku[i][j]);
+                blocks.get(j / 3).add(sudoku[i][j]);
+            }
+            if (rowSet.size() != 9) return false;
+            rowSet.clear();
+
+            if ((i + 1) % 3 == 0) {
+                for (int j = 0; j < 3; j++) {
+                    if (blocks.get(j).size() != 9) return false;
+                    blocks.get(j).clear();
+                }
+            }
+        }
+        return true;
+    }
+
+    public static int[][] transposeMatrix(final int[][] matrix) {
+        return IntStream.range(0, matrix[0].length)
+                .mapToObj(i -> Stream.of(matrix).mapToInt(row -> row[i]).toArray())
+                .toArray(int[][]::new);
+    }
+
+    public static void printMatrix(final int[][] matrix) {
+        for (int i = 0; i < 9; i++) {
+            System.out.print("{");
+            for (int j = 0; j < 9; j++) {
+                System.out.print(matrix[i][j]+" ,");
+            }
+            System.out.println("},");
+        }
+        System.out.println();
     }
 
     //******************************************************************************************************************
